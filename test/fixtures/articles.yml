@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order: 1
+  title: MyString
+  content: MyText
+  public_at: 2014-01-03 04:54:46
+  last_edit_at: 2014-01-03 04:54:46
+  new_edit: 1
+
+two:
+  order: 1
+  title: MyString
+  content: MyText
+  public_at: 2014-01-03 04:54:46
+  last_edit_at: 2014-01-03 04:54:46
+  new_edit: 1

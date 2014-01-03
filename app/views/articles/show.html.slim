@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Order:
+  = @article.order
+p
+  strong Title:
+  = @article.title
+p
+  strong Content:
+  = @article.content
+p
+  strong Public at:
+  = @article.public_at
+p
+  strong Last edit at:
+  = @article.last_edit_at
+p
+  strong New edit:
+  = @article.new_edit
+
+= link_to 'Edit', edit_article_path(@article)
+'|
+= link_to 'Back', articles_path
