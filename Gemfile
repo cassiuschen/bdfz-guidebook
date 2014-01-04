@@ -12,7 +12,8 @@ gem 'slim-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0.rc1'
-gem 'semantic-ui-rails'
+gem 'semantic-ui-sass'
+gem 'nprogress-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -20,6 +21,7 @@ gem 'guard-rspec'
 gem 'rb-inotify'
 gem 'libnotify'
 gem 'markdown'
+gem 'redcarpet'
 
 gem 'rack-mini-profiler'
 
