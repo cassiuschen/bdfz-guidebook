@@ -19,6 +19,29 @@ p
   strong New edit:
   = @article.new_edit
 
+- @article.questions.each do |question|
+  p
+    strong Question_Belongs_to:
+    = question.author_id
+  p
+    strong Title:
+    = question.title
+
+= form_for([@article, @article.questions.build]) do |f|
+  p
+    | Who?
+  = f.text_field :author_id
+  p
+    | What?
+  = f.text_field :title
+  p
+    | What_detail?
+  = f.text_area :content
+  p
+    | What_detail_official?
+  = f.text_area :official_answer
+  = f.submit 
+
 = link_to 'Edit', edit_article_path(@article)
 '|
 = link_to 'Back', articles_path

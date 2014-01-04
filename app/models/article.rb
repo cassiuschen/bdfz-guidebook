@@ -1,3 +1,3 @@
 class Article < ActiveRecord::Base
-	has_many :question 
+	has_many :questions
 end

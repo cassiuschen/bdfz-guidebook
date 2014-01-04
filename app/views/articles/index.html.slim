@@ -16,7 +16,7 @@ table
     tr
       td = article.order
       td = article.title
-      td = article.content
+      td == $markdown.render(article.content)
       td = article.public_at
       td = article.last_edit_at
       td = article.new_edit
