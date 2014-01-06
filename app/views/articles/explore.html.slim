@@ -7,7 +7,7 @@
       i.circular.book.icon
       a.ui.big.header 北大附中学生手册
       .sub.header
-        | #{@last_edit} 修订版本
+        | #{better_version(@last_edit)} 修订版本
     .ui.horizontal.divider
       | 正文
     - @articles.each do |article|
@@ -15,7 +15,7 @@
         h2.ui.header
           = article.title
           .ui.pointing.left.label
-            | #{article.updated_at}修订
+            | #{better_time(article.updated_at)   }修订
         td == $markdown.render(article.content)
         - unless article == @articles.last
           .ui.section.divider

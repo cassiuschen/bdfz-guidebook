@@ -1,2 +1,26 @@
 module ApplicationHelper
+  def timeago(time, options = {})
+    options[:class]
+    options[:class] = options[:class].blank? ? "timeago" : [options[:class],"timeago"].join(" ")
+    content_tag(:abbr, "", options.merge(:title => time.iso8601)) if time
+  end
+
+  def better_time(time)
+  	t = time.to_s
+  	p = /(....)-(..)-(..)/ 
+  	p.match(t)
+  	year = $1.to_i
+  	month = $2.to_i
+  	day = $3.to_i
+  	"#{year}年#{month}月#{day}日"
+  end
+
+  def better_version(time)
+  	t = time.to_s
+  	p = /(....)-(..)-(..)/ 
+  	p.match(t)
+  	year = $1.to_i
+  	month = $2.to_i
+  	"#{year}年#{month}月"
+  end
 end
