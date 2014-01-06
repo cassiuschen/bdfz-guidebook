@@ -1,5 +1,7 @@
 #北大附中学生手册
 
+##
+
 ## 生产环境
 - Linux
 - Ruby 2.1.0p1
@@ -12,7 +14,7 @@
 
 首先克隆到本地：
     
-    git clone https://github.com/cassiuschen/bdfz-guidebook
+    git clone https://github.com/cassiuschen/bdfz-guidebook.git
 
 安装Gems：
     
@@ -22,6 +24,7 @@
 
     rake db:create
     rake db:migrate
+    rake db:seed
 
 运行：
 
