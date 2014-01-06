@@ -17,3 +17,10 @@
 $nprogress-color: #f1f1f1;
 @import 'nprogress';
 @import 'nprogress-bootstrap';
+
+.footer.link.list {
+	display: block;
+	color: #fff;
+	text-align: center;
+	margin-bottom: 1.5rem;
+}
