@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get "home/index"
+  root 'home#index'
+
+  get "articles/explore"
+
   resources :articles do
     resources :questions do
       resources :comments

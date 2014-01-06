@@ -45,5 +45,11 @@ class ArticlesControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to articles_path
+  end  
+  
+  test "should get explore" do
+    get :explore
+    assert_response :success
   end
+
 end

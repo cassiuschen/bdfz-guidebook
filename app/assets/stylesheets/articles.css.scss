@@ -1,3 +1,31 @@
-// Place all the styles related to the Articles controller here.
+// Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.articles.explore {
+	overflow: visible !important;
+	background-image: asset-url('noise.png');
+	background-color: rgba(42, 42, 42, 0.95);
+}
+#content {
+	margin: 5% 0% 10% 12.5%;
+	padding-top: 45px; 
+	background-color: #fbfdff;
+	border-radius: 2px;
+	margin-bottom: 20px;
+	box-shadow: 9px 9px 10px rgba(0,0,0,0.3);
+	section {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+	img {
+		width: 100%;
+	}
+}
+.launch.button {
+	position: fixed;
+	top: 63px;
+	left: 0px;
+	z-index: 500;
+	width: 70px;
+	opacity: 0.9;
+}
