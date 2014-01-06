@@ -1,0 +1,9 @@
+.ui.grid
+  .column
+    h1.ui.header Title
+    .ui.horizontal.icon.divider
+      i.circular.book.icon
+    - @articles.each do |article|
+      h2.ui.header = article.title
+      td == $markdown.render(article.content)
+      .ui.section.divider

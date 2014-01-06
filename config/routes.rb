@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "articles/explore"
+
   resources :articles do
     resources :questions do
       resources :comments
