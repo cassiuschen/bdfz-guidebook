@@ -1,9 +1,32 @@
+.ui.black.huge.launch.right.attached.button style="width: 70px;" id="back_to_index"
+  i.icon.list.layout
+  span.text style="display: none;" id="back_to_index_word" 菜单
 .ui.grid
-  .column
-    h1.ui.header Title
-    .ui.horizontal.icon.divider
+  .twelve.wide.column id="content"
+    .ui.center.aligned.icon.header
       i.circular.book.icon
+      a.ui.big.header 北大附中学生手册
+      .sub.header
+        | #{@last_edit} 修订版本
+    .ui.horizontal.divider
+      | 正文
     - @articles.each do |article|
-      h2.ui.header = article.title
-      td == $markdown.render(article.content)
-      .ui.section.divider
+      section id = article.order
+        h2.ui.header
+          = article.title
+          .ui.pointing.left.label
+            | #{article.updated_at}修订
+        td == $markdown.render(article.content)
+        - unless article == @articles.last
+          .ui.section.divider
+    .ui.horizontal.divider
+      | 完
+
+.ui.vertical.sidebar.menu
+  = link_to root_path, :class => "item" 
+    i.home.icon
+    | 返回首页
+  - for article in @articles
+    a.item href="##{article.order}" id="hrefbar-#{article.order}"
+      i.book.icon
+      = article.title
