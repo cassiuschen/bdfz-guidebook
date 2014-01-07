@@ -10,7 +10,7 @@ $(document).ready ->
 
 	$back.mouseenter ->
 		$back.animate( {'width':'135px'} , { 
-			duration:700,
+			duration:150,
 			easing:'jswing',
 			complete: ->
 				$backword.css("display","inline")
@@ -18,7 +18,7 @@ $(document).ready ->
 		return
 
 	$back.mouseleave ->
-		$back.animate( {'width':'70px'} , { duration:500,easing:'easeInOutCirc' })
+		$back.animate( {'width':'70px'} , { duration:150,easing:'easeInOutCirc' })
 		$backword.css("display","none")
 		return
 	$back.click ->
