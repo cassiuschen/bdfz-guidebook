@@ -1,3 +1,9 @@
 = image_tag 'b-01.jpg' , :class => "background" , :id => "bg"
-h1 Home#index
-p Find me in app/views/home/index.html.slim
+.ui.page.dimmer.visible.active
+  .content
+    .center
+      h2.ui.inverted.icon.header
+         i.icon.circular.inverted.emphasized.blue.book
+         | 北大附中学生手册
+         .sub.header
+           | #{better_version(@last_edit)} 最后修订

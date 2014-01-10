@@ -86,7 +86,6 @@ GEM
     minitest (5.2.0)
     multi_json (1.8.2)
     nprogress-rails (0.1.2.3)
-    pg (0.17.1)
     polyglot (0.3.3)
     props (1.0.3)
     pry (0.9.12.4)
@@ -195,7 +194,6 @@ DEPENDENCIES
   libnotify
   markdown
   nprogress-rails
-  pg
   puma
   rack-mini-profiler
   rails (= 4.1.0.beta1)
