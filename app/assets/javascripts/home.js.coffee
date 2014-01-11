@@ -3,6 +3,11 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
+	$("#login_click").click ->
+		$("#login").sidebar(
+			overlay: true
+			).sidebar('toggle')
+		return
 	$bg = $("#bg")
 	$w = $(window)
 	wh = bh = $w.height()
@@ -46,8 +51,18 @@ $(document).ready ->
 			when wh >= bh then use_height()
 			when wh < bh then use_width()
 		return
-	return
 	
+	lf = $("#login")
+	lc = lf.children()
+	lch = lc.height()
+	lfh = lf.height()
+	set_login_height = ->
+		lf.css(
+			"margin-top": "#{-lch-8}px}"
+			height: "#{lch+8}px"
+			)
+	set_login_height()
+	return
 
 #t = n = 0
 #$(document).ready ->
