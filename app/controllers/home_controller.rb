@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
   def index
-  	@raw_articles = Article.all
+    rand_seed = rand(100)
+    @rand_image = rand_seed % 2 + 1
+    @raw_articles = Article.all
     @articles = @raw_articles.sort_by {|a| a.order}
     time = Array.new
     for article in @articles
