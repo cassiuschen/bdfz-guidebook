@@ -1,29 +1,12 @@
-h1 Listing articles
-
-table
-  tr
-    th Order
-    th Title
-    th Content
-    th Public at
-    th Last edit at
-    th New edit
-    th
-    th
-    th
-
+.ui.items
   - @articles.each do |article|
-    tr
-      td = article.order
-      td = article.title
-      td == $markdown.render(article.content)
-      td = article.public_at
-      td = article.last_edit_at
-      td = article.new_edit
-      td = link_to 'Show', article
-      td = link_to 'Edit', edit_article_path(article)
-      td = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
+    = link_to article, :class => "article item"
+      .content
+        = timeago(article.last_edit_at, :class =>"meta")
+        .name 
+          | #{article.order}
+        p.description = article.title
+          = link_to '编辑', edit_article_path(article)
+   
 
 = link_to 'New Article', new_article_path

@@ -30,7 +30,12 @@ $nprogress-color: #f1f1f1;
 	width: auto;
 	padding: 0% 8%;
 }
+.body.container { padding-top: 80px; }
 body {
 	margin: 0px !important;
 	padding: 0px !important;
 }
+a:link{text-decoration:none }
+a:visited {text-decoration:none}
+a:hover {text-decoration:none;}
+a:active {text-decoration:none} 

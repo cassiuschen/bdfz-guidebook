@@ -17,8 +17,19 @@
 #= require nprogress-turbolinks
 #= require semantic-ui
 #= require slider
+#= require timeago
 # require_tree .
 NProgress.configure
-  showSpinner: false
+  showSpinner: true
   ease: 'ease'
   speed: 500
+
+$(document).on 'page:fetch', ->
+  NProgress.start()
+$(document).on 'page:restore', ->
+  NProgress.remove()
+$(document).ready ->
+  NProgress.done()
+
+$(document).ready ->
+	$(".timeago").timeago()
