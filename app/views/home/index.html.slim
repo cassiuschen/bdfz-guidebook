@@ -1,2 +1,21 @@
-h1 Home#index
-p Find me in app/views/home/index.html.slim
+= image_tag 'b-01.jpg' , :class => "background" , :id => "bg"
+
+.ui.page.dimmer.visible.active
+  .content
+    .center
+      h2.ui.inverted.icon.header
+         i.icon.circular.inverted.emphasized.blue.book
+         | 北大附中学生手册
+         .sub.header
+           | #{better_version(@last_edit)} 最后修订
+      br /
+      button.ui.inverted.basic.button id="login_click"
+        i.user.icon
+        | 登陆以修订手册
+
+      a.ui.inverted.basic.button href="/explore"
+        i.text.file.icon
+        |   浏览手册内容
+  = render "login"
+
+

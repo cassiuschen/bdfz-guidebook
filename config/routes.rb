@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get "articles/explore"
+  get '/explore' => 'articles#explore'
 
   resources :articles do
     resources :questions do
