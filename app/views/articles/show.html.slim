@@ -30,16 +30,16 @@ p
 = form_for([@article, @article.questions.build]) do |f|
   p
     | Who?
-  = f.text_field :author_id
+    = f.text_field :author_id
   p
     | What?
-  = f.text_field :title
+    = f.text_field :title
   p
     | What_detail?
-  = f.text_area :content
+    = f.text_area :content
   p
     | What_detail_official?
-  = f.text_area :official_answer
+    = f.text_area :official_answer
   = f.submit 
 
 = link_to 'Edit', edit_article_path(@article)

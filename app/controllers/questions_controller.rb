@@ -1,12 +1,7 @@
 class QuestionsController < ApplicationController
   def create
     @article = Article.find(params[:article_id])
-    @question = @article.questions.create(params[:questions])
+    @question = @article.questions.create(params[:question].permit(:title))
     redirect_to article_path(@article)
   end
-
-  private
-    def question_params
-      params.require(:title).permit(:auth_id, :content)
-    end
 end

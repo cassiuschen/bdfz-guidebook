@@ -1,4 +1,4 @@
 class Question < ActiveRecord::Base
-  belongs_to :articles
+  belongs_to :article
   has_many :comments
 end
