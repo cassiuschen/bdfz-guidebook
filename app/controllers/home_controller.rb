@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  layout "blank"
   def index
     rand_seed = rand(100)
     @rand_image = rand_seed % 2 + 1
