@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
   end
 
   # GET /articles/explore
+  # GET /explore
   def explore
     @raw_articles = Article.all
     @articles = @raw_articles.sort_by {|a| a.order}

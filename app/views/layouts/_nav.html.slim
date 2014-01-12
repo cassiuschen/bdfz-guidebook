@@ -1,0 +1,8 @@
+.ui.fixed.transparent.inverted.menu
+  .container
+    .title.item
+      b 学生手册
+      = content_for?(:title) ? yield(:title) : ""
+    .right.menu
+      .item
+        i.logout.icon
