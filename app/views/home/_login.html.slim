@@ -1,29 +1,29 @@
-.ui.floating.bottom.segment.sidebar.overlay id="login"
-  .ui.two.column.middle.aligned.relaxed.grid.basic.segment
-    .column
-      .ui.form.segment
-        .ui.active.inverted.dimmer
-          .ui.text.loader 尚未开放
-        .field
-          label
-            | 使用 北附人BDFZer ID登陆
-          .ui.left.labeled.icon.input
-            input type="text" placeholder="北附人ID"
-            i.user.icon
-            .ui.corner.label
-              i.asterisk.icon
-        .field
-          label
-            | 密码
-          .ui.left.labeled.icon.input
-            input type="password"
-            i.user.icon
-            .ui.corner.label
-              i.asterisk.icon
-        .ui.blue.submit.button 登陆
-    .ui.vertical.divider Or
-    .center.aligned.column
-      .big.red.ui.labeled.icon.button
-        i.signup.icon 
-        | 使用北大附中CAS登陆
-
+.blue.ui.floating.bottom.segment.sidebar.overlay id="login"
+  .container.center
+    .ui.two.column.middle.aligned.relaxed.grid.segment style="width:100%" id="login_form"
+      h4.ui.right.aligned.header
+        i.close.basic.icon id="login_close"
+      .column
+        .ui.form.segment.loading
+          .field
+            label
+              | 使用 北附人BDFZer ID登陆
+            .ui.left.labeled.icon.input
+              input.disable type="text" placeholder="北附人ID"
+              i.user.icon
+              .ui.corner.label
+                i.asterisk.icon
+          .field
+            label
+              | 密码
+            .ui.left.labeled.icon.input
+              input type="password"
+              i.user.icon
+              .ui.corner.label
+                i.asterisk.icon
+          .ui.blue.submit.button 登陆
+      .ui.vertical.divider Or
+      .center.aligned.column
+        .big.red.ui.labeled.icon.button
+          i.signup.icon 
+          | 使用北大附中CAS登陆

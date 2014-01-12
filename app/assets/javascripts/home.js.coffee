@@ -8,60 +8,76 @@ $(document).ready ->
 			overlay: true
 			).sidebar('toggle')
 		return
+	$("#login_close").click ->
+		$("#login").sidebar(
+			overlay: true
+			).sidebar('toggle')
+		return
 	$bg = $("#bg")
-	$w = $(window)
-	wh = bh = $w.height()
-	ww = bw = $w.width()
+	bw = $bg.width()
+	bh = $bg.height()
 	use_height = ->
-		bh = $bg.height()
-		bw = $bg.width()
-		pl = - (ww-bw)/2
-		$bg.css(
-			top: 0
-			height: "100%"
-			left: pl
-			position: "fixed"
-			right: "auto"
-			bottom: "auto"
-			)
+#		bh = $bg.height()
+#		bw = $bg.width()
+#		pl = ( ww - bw ) / -2
+#		$bg.css(
+#			top: "auto"
+#			height: "100%"
+#			width: "auto"
+#			left: "auto"
+#			position: "fixed"
+#			right: "auto"
+#			bottom: "auto"
+#			)
+		$bg.removeClass "use_width"
+		$bg.addClass "use_height"
 		return
 	use_width = ->
-		bh = $bg.height()
-		bw = $bg.width()
-		pt = ( wh - bh ) / 2
-		$bg.css(
-			top: pt
-			width: "100%"
-			left: 0
-			position: "fixed"
-			right: "auto"
-			bottom: "auto"
-			)
+#		bh = $bg.height()	
+#		bw = $bg.width()
+#		pt = ( wh - bh ) / 2
+#		$bg.css(
+#			top: "auto"
+#			height: "auto"
+#			width: "100%"
+#			left: "auto"
+#			position: "fixed"
+#			right: "auto"
+#			bottom: "auto"
+#			)
+		$bg.removeClass "use_height"
+		$bg.addClass "use_width"
 		return
-	resizeImg = (bh,bw) =>
-		switch
-			when wh >= bh then use_height()
-			when wh < bh then use_width()
-		return
-	$bg.load ->
-		bh = $bg.height()
-		bw = $bg.width()
+	resizeImg = ->
+		$w = $(window)
+		wh = $w.height()
+		ww = $w.width()
+		wp = 10000 * wh / ww
+		bp = 10000 * bh / bw 
 		#resizeImg(bh,bw)
 		switch
-			when wh >= bh then use_height()
-			when wh < bh then use_width()
+			when wp > bp then use_height()
+			when wp = bp then use_width()
+			when wp < bp then use_width()
+		return
+	$bg.load ->
+		resizeImg()
+		return
+	window.addEventListener "resize", ->
+		resizeImg()
 		return
 	
-	lf = $("#login")
-	lc = lf.children()
-	lch = lc.height()
-	lfh = lf.height()
-	set_login_height = ->
-		lf.css(
-			"margin-top": "#{-lch-8}px}"
-			height: "#{lch+8}px"
-			)
-	set_login_height()
+#	lf = $("#login")
+#	lc = lf.children()
+#	lch = lc.height()
+#	lfh = lf.height()
+#	set_login_height = ->
+#		lf.css(
+#			"margin-top": "#{-lch-8}px}"
+#			height: "#{lch+8}px"
+#			width: "100%"
+#			)
+#	set_login_height()
 	return
 
 #t = n = 0
