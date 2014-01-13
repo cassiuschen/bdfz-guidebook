@@ -24,12 +24,34 @@ NProgress.configure
   ease: 'ease'
   speed: 500
 
+loader_remove = ->
+	$("#loader").removeClass "active"
+	return
+
+loader_add = ->
+	$("#loader").addClass "active"
+	return
+
 $(document).on 'page:fetch', ->
   NProgress.start()
+  $(".timeago").timeago()
+#  loader_add()
+  return
+
 $(document).on 'page:restore', ->
   NProgress.remove()
-$(document).ready ->
-  NProgress.done()
+  $(".timeago").timeago()
+#  loader_remove()
+  return
 
 $(document).ready ->
+  NProgress.done()
+#  loader_remove()
+  return
+
+
+$(document).ready ->
+	$(".timeago").timeago()
+
+$(document).load ->
 	$(".timeago").timeago()

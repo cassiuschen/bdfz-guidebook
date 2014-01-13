@@ -29,4 +29,15 @@ module ApplicationHelper
     options[:class] = options[:class].blank? ? "timeago" : [options[:class],"timeago"].join(" ")
     content_tag(:div, "", options.merge(:title => time.iso8601)) if time
   end
+
+  def page_title
+    if @article
+      @title = @article.title
+    end
+    if @title
+      @title + " | 学生手册"
+    else
+      "学生手册"
+    end
+  end
 end

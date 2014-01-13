@@ -1,47 +1,40 @@
-p#notice = notice
-
-p
-  strong Order:
-  = @article.order
-p
-  strong Title:
-  = @article.title
-p
-  strong Content:
-  == $markdown.render(@article.content)
-p
-  strong Public at:
-  = @article.public_at
-p
-  strong Last edit at:
-  = @article.last_edit_at
-p
-  strong New edit:
-  = @article.new_edit
-
-- @article.questions.each do |question|
-  p
-    strong Question_Belongs_to:
-    = question.author_id
-  p
-    strong Title:
-    = question.title
-
-= form_for([@article, @article.questions.build]) do |f|
-  p
-    | Who?
-    = f.text_field :author_id
-  p
-    | What?
-    = f.text_field :title
-  p
-    | What_detail?
-    = f.text_area :content
-  p
-    | What_detail_official?
-    = f.text_area :official_answer
-  = f.submit 
+.show.article.ui.celled.grid
+  .row
+    .two.wide.column
+      b 标题：
+    .nine.wide.column
+      = @article.title
+    .one.wide.column
+      b 创建于：
+    = timeago(@article.created_at, :class => "one wide column")
+    .two.wide.column
+      b 最后更新：
+    = timeago(@article.updated_at, :class => "one wide column")
+  .row
+    .twelve.wide.column
+      .article.content
+        == $markdown.render(@article.content)
+    .four.wide.column
+  .row
+    //- @article.questions.each do |question|
+  .row
+    .sixteen.wide.column
+      .ui.ignored.info.message
+        | 你可以在这里写下你针对#{@article.title}的问题或建议，以供学校对此进行说明或整改。
+      = form_for([@article, @article.questions.build], html: {class: "ui form segment"}) do |f|
+        .ui.error.message
+          .header#notice = notice
+        .field
+          label 标题：
+          = f.text_field :title
+        .field
+          label 详细描述：
+          = f.text_area :content
+        = f.submit '发布问题', :class => "ui blue submit button"
 
 = link_to 'Edit', edit_article_path(@article)
 '|
 = link_to 'Back', articles_path
+
+javascript:
+  $(".timeago").timeago();
