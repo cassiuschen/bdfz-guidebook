@@ -30,6 +30,12 @@ module ApplicationHelper
     content_tag(:div, "", options.merge(:title => time.iso8601)) if time
   end
 
+  def span_timeago(time, options = {})
+    options[:class]
+    options[:class] = options[:class].blank? ? "timeago" : [options[:class],"timeago"].join(" ")
+    content_tag(:span, "", options.merge(:title => time.iso8601)) if time
+  end
+
   def page_title
     if @article
       @title = @article.title

@@ -16,7 +16,29 @@
         == $markdown.render(@article.content)
     .four.wide.column
   .row
-    //- @article.questions.each do |question|
+    .sixteen.wide.column
+      .ui.header
+        i.icon.inverted.circular.blue.comment
+        | 问题
+      .ui.comments
+        - @article.questions.each do |question|
+          .comment
+            a.avatar
+              = image_tag "demo/avatar.jpg"
+            .content
+              a.author = question.title
+              .metadata
+                = span_timeago(question.created_at, :class => "date")
+              .text =  question.content
+              .actions
+                a.reply 回复
+                a.delete 删除
+        form.ui.reply.form
+          .field
+            textarea
+          .ui.fluid.blue.labeled.submit.icon.button
+            i.edit.icon
+            | 添加回复
   .row
     .sixteen.wide.column
       .ui.ignored.info.message
