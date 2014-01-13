@@ -29,7 +29,7 @@
               a.author = question.title
               .metadata
                 = span_timeago(question.created_at, :class => "date")
-              .text =  question.content
+              .text = question.content
               .actions
                 a.reply 回复
                 a.delete 删除
@@ -43,16 +43,16 @@
     .sixteen.wide.column
       .ui.ignored.info.message
         | 你可以在这里写下你针对#{@article.title}的问题或建议，以供学校对此进行说明或整改。
-      = form_for([@article, @article.questions.build], html: {class: "ui form segment"}) do |f|
+      = form_for([@article, @article.questions.build], html: {class: "ui form segment", id: "question"}) do |f|
         .ui.error.message
           .header#notice = notice
         .field
           label 标题：
-          = f.text_field :title
+          = f.text_field :title, name: "question_title"
         .field
           label 详细描述：
-          = f.text_area :content
-        = f.submit '发布问题', :class => "ui blue submit button"
+          = f.text_area :content, name: "question_content"
+        = f.submit '发布问题', :class => "ui blue question submit button"
 
 = link_to 'Edit', edit_article_path(@article)
 '|

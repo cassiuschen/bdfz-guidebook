@@ -27,4 +27,20 @@ $(document).ready ->
 	$hrefbar.click ->
 		$bar.sidebar('toggle')
 		return
+	$(".question.submit").click ->
+		$("#question").form
+			title:
+				identifier: "question_title"
+				role: [
+					type: 'empty'
+					prompt: "请输入问题标题"
+				]
+			content:
+				identifier: "question_content"
+				role: [
+					type: 'empty'
+					prompt: "请输入问题描述"
+				]
+		return
 	return
+
