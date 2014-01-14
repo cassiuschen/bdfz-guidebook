@@ -1,5 +1,12 @@
-h1 New article
-
-== render 'form'
-
-= link_to 'Back', articles_path
+.segment
+  .header.container
+    .pageheader
+      h1.ui.dividing.header 新建文档
+      p
+        | 请务必填写文档序号，最终生成统一文档时我们会按照序号排序。
+    = link_to articles_path, :class => "ui basic labeled icon toggle overview button"
+      | 返回文档列表
+      i.reply.mail.icon
+.body.container
+  == render 'form'
+  = render 'footer'

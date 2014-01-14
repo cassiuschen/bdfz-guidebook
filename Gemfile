@@ -22,6 +22,7 @@ gem 'rb-inotify'
 gem 'libnotify'
 gem 'markdown'
 gem 'redcarpet'
+gem 'less'
 
 gem 'rack-mini-profiler'
 

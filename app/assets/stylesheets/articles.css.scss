@@ -30,3 +30,41 @@
 	width: 70px;
 	opacity: 0.9;
 }
+.article.item {
+	height: 120px !important;
+	min-height: 100px !important;
+}
+.center.content {
+	text-align: center;
+}
+body {
+	background-color: rgba(200, 200, 200, 0.15);
+	background-image: asset-url('bg2.png');
+	color: #333333;
+	font-size: 15px;
+}
+img {
+	width: 100%;
+}
+
+.show.article {
+	//background-image: asset-url('bg.jpg');
+	background-color: #fff;
+	border-radius: 2px;
+	margin-bottom: 20px;
+	box-shadow: 2px 9px 10px rgba(0,0,0,0.3) !important;
+}
+.article.content {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.pageheader {
+display: table-cell;
+vertical-align: top;
+width: 100%;
+}
+#article_show_page {
+	background-image: asset-url('bg2.png') !important;
+}
+textarea { height: 420px !important; }

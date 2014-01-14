@@ -66,6 +66,10 @@ $(document).ready ->
 	window.addEventListener "resize", ->
 		resizeImg()
 		return
+	return
+window.addEventListener "resize", ->
+	resizeImg()
+	return
 	
 #	lf = $("#login")
 #	lc = lf.children()
