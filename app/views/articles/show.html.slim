@@ -1,62 +1,70 @@
-.show.article.ui.celled.grid
-  .row
-    .two.wide.column
-      b 标题：
-    .nine.wide.column
-      = @article.title
-    .one.wide.column
-      b 创建于：
-    = timeago(@article.created_at, :class => "one wide column")
-    .two.wide.column
-      b 最后更新：
-    = timeago(@article.updated_at, :class => "one wide column")
-  .row
-    .twelve.wide.column
-      .article.content
-        == $markdown.render(@article.content)
-    .four.wide.column
-  .row
-    .sixteen.wide.column
-      .ui.header
-        i.icon.inverted.circular.blue.comment
-        | 问题
-      .ui.comments
-        - @article.questions.each do |question|
-          .comment
-            a.avatar
-              = image_tag "demo/avatar.jpg"
-            .content
-              a.author = question.title
-              .metadata
-                = span_timeago(question.created_at, :class => "date")
-              .text = question.content
-              .actions
-                a.reply 回复
-                a.delete 删除
-        form.ui.reply.form
-          .field
-            textarea
-          .ui.fluid.blue.labeled.submit.icon.button
+.header.container id="article_show_page"
+  .show.article.ui.celled.grid
+    .row
+      .two.wide.column
+        b 标题：
+      .eight.wide.column
+        = @article.title
+      .two.wide.column
+        b 创建于：
+      = timeago(@article.created_at, :class => "one wide column")
+      .two.wide.column
+        b 最后更新：
+      = timeago(@article.updated_at, :class => "one wide column")
+    .row
+      .twelve.wide.column
+        .article.content
+          == $markdown.render(@article.content)
+      .four.wide.column
+        .ui.vertical.text.menu
+          .header.item 文档操作
+          a.active.item
+            i.home.icon
+            | 查看文档
+          = link_to edit_article_path(@article), :class => "item"
             i.edit.icon
-            | 添加回复
-  .row
-    .sixteen.wide.column
-      .ui.ignored.info.message
-        | 你可以在这里写下你针对#{@article.title}的问题或建议，以供学校对此进行说明或整改。
-      = form_for([@article, @article.questions.build], html: {class: "ui form segment", id: "question"}) do |f|
-        .ui.error.message
-          .header#notice = notice
-        .field
-          label 标题：
-          = f.text_field :title, name: "question_title"
-        .field
-          label 详细描述：
-          = f.text_area :content, name: "question_content"
-        = f.submit '发布问题', :class => "ui blue question submit button"
-
-= link_to 'Edit', edit_article_path(@article)
-'|
-= link_to 'Back', articles_path
-
+            | 编辑文档
+          = link_to @article, data: {:confirm => 'Are you sure?'}, :method => :delete, :class => "item"
+            i.remove.icon
+            | 删除文档
+          = link_to articles_path, :class => "item"
+            i.reorder.icon
+            | 返回文档列表
+    .row
+      .sixteen.wide.column
+        .ui.header
+          i.icon.inverted.circular.blue.comment
+          | 问题
+        .ui.selection.list
+          - @article.questions.each do |question|
+            .item
+              = image_tag "demo/avatar.jpg", :class => "ui avatar image"
+              .content
+                .header 
+                  | 1432101     
+                  = span_timeago(question.created_at, :class => "date")
+                = question.title
+          form.ui.reply.form
+            .field
+              textarea
+            .ui.fluid.blue.labeled.submit.icon.button
+              i.edit.icon
+              | 添加回复
+    .row
+      .sixteen.wide.column
+        .ui.ignored.info.message
+          | 你可以在这里写下你针对#{@article.title}的问题或建议，以供学校对此进行说明或整改。
+        = form_for([@article, @article.questions.build], html: {class: "ui form segment", id: "question"}) do |f|
+          .ui.error.message
+            .header#notice = notice
+          .field
+            label 标题：
+            = f.text_field :title
+          .field
+            label 详细描述：
+            = f.text_area :content
+          = f.submit '发布问题', :class => "ui blue question submit button"
+  br /
+  = render 'footer'
 javascript:
   $(".timeago").timeago();

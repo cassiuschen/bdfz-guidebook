@@ -30,7 +30,14 @@ $nprogress-color: #f1f1f1;
 	width: auto;
 	padding: 0% 8%;
 }
-.body.container { padding-top: 80px; }
+.body.container { padding-top: 20px; }
+.header.container { 
+	padding-top: 80px;
+	padding-bottom: 20px;
+	background-color: white;
+	padding-left: 15%;
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
 body {
 	margin: 0px !important;
 	padding: 0px !important;

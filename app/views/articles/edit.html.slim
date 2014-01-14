@@ -1,8 +1,14 @@
-h1 Editing article
+.segment
+  .header.container
+    .pageheader
+      h1.ui.dividing.header 编辑文档
+      p
+        | 请浏览右侧的写作说明来使用Markdown语言编辑文档。
+    = link_to @article, :class => "ui basic labeled icon toggle overview button"
+      | 取消修改
+      i.reply.mail.icon
+.body.container
 
-== render 'form'
-
-= link_to 'Show', @article
-'|
-= link_to 'Back', articles_path
+  == render 'form'
+  = render 'footer'
 

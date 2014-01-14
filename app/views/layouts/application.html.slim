@@ -12,5 +12,4 @@ html
   body class=("#{controller_name} #{action_name}") data-controller-name="#{controller_name} #{request.path}"
     - unless request.path == [ "/articles/explore" , "/explore" ]
       = render 'layouts/nav'
-    .body.container
-      = yield
+    = yield

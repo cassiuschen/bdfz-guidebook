@@ -1,17 +1,29 @@
-.ui.items
-  - @articles.each do |article|
-    = link_to article, :class => "article item"
-      .content
-        = timeago(article.last_edit_at, :class =>"meta")
-        .name 
-          | #{article.order}
-        p.description = article.title
-          = link_to '编辑', edit_article_path(article)
-   
+.segment
+  .header.container
+    .pageheader
+      h1.ui.dividing.header 文档列表
+      p
+        | 选择你想要查看或编辑的文档，发布问题、回答问题。
+    a.ui.basic.labeled.icon.toggle.overview.button href="/explore"
+      | 浏览文档汇总
+      i.book.icon
+.body.container style="padding-top: 20px;"
+  .ui.items
+    - @articles.each do |article|
+      = link_to article, :class => "article item"
+        .content
+          = timeago(article.last_edit_at, :class =>"meta")
+          .name 
+            | #{article.order}
+          p.description = article.title
+            = link_to '编辑', edit_article_path(article)
+       
 
-  = link_to new_article_path, :class => 'article item'
-    .center.content
-      i.add.huge.black.link.icon
+    = link_to new_article_path, :class => 'article item'
+      .center.content
+        i.add.huge.black.link.icon
+
+  = render 'footer'
 
 javascript:
   $(".timeago").timeago();
