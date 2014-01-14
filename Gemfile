@@ -54,6 +54,15 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # gem 'unicorn'
 gem 'puma'
 
+# Login Server
+gem 'omniauth'
+gem 'omniauth-openid'
+gem 'openid-redis-store'
+gem 'omniauth-cas'
+gem 'hiredis'
+gem 'redis', :require => ["redis", "redis/connection/hiredis"]
+gem 'active_model_serializers'
+gem 'html_truncator'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
