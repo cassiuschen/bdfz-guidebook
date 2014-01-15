@@ -1,11 +1,15 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
+  prepend_before_action RubyCAS::GatewayFilter, :only => :explore
+  #prepend_before_action RubyCAS::Filter, :except => :explore
+
   # GET /articles
   # GET /articles.json
   def index
     @articles = Article.all
     @title = "内容"
+    @current_user = session[:cas_user]
   end
 
   # GET /articles/explore

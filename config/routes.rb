@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "auth/logout"
+
   get "home/index"
   root 'home#index'
 

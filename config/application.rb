@@ -20,5 +20,9 @@ module Guidebook
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     Rack::MiniProfiler.config.position = 'right'
+    config.rubycas.logger = Rails.logger
+    config.rubycas.cas_base_url = 'http://bdfz-cas.pkuschool.edu.cn:80/cas/'
+    config.rubycas.validate_url = 'http://bdfz-cas.pkuschool.edu.cn:80/cas/serviceValidate'
+    config.rubycas.enable_single_sign_out = true
   end
 end

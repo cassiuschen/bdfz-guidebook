@@ -55,13 +55,16 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'puma'
 
 # Login Server
-gem 'omniauth'
-gem 'omniauth-openid'
-gem 'openid-redis-store'
-gem 'omniauth-cas'
-gem 'hiredis'
-gem 'redis', :require => ["redis", "redis/connection/hiredis"]
-gem 'active_model_serializers'
+gem 'rubycas-client', "~> 2.3.10.rc1"
+gem "rubycas-client-rails", :git => "git://github.com/rubycas/rubycas-client-rails.git"
+gem 'activerecord-session_store'
+#gem 'omniauth'
+#gem 'omniauth-openid'
+#gem 'openid-redis-store'
+#gem 'omniauth-cas'
+#gem 'hiredis'
+#gem 'redis', :require => ["redis", "redis/connection/hiredis"]
+#gem 'active_model_serializers'
 gem 'html_truncator'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

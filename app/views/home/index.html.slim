@@ -9,13 +9,21 @@
          .sub.header
            | #{better_version(@last_edit)} 最后修订
       br /
-      button.ui.inverted.basic.button id="login_click"
+      
+      //button.ui.inverted.basic.button id="login_click"
+      = link_to RubyCAS::Filter.login_url(controller), :class => "ui inverted basic button"
         i.user.icon
         | 登陆以修订手册
 
       a.ui.inverted.basic.button href="/explore"
         i.text.file.icon
         |   浏览手册内容
+
+      //- if @current_user
+      a.ui.inverted.basic.button href="/articles"
+        i.text.file.icon
+        |   #{session[:cas_user]}欢迎！
+
   = render "login"
 
 

@@ -78,3 +78,8 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 end
+# RubyCAS-client
+CASClient::Frameworks::Rails::Filter.configure(
+  :cas_base_url => "http://bdfz-cas.pkuschool.edu.cn:80/cas/",
+  :validate_url => "http://bdfz-cas.pkuschool.edu.cn:80/cas/serviceValidate"
+)

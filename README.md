@@ -25,9 +25,11 @@
 
 配置数据库：
 
+    rails generate active_record:session_migration
     rake db:create
     rake db:migrate
     rake db:seed
+
 
 运行：
 
