@@ -16,7 +16,6 @@
 #= require nprogress
 #= require nprogress-turbolinks
 #= require semantic-ui
-#= require slider
 #= require timeago
 # require_tree .
 NProgress.configure
