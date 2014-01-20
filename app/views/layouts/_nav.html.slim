@@ -4,5 +4,14 @@
       b 学生手册
       | : #{@title}
     .right.menu
-      a.icon.item
-        i.sign.out.icon
+      a.icon.development.item
+        i.warning.out.icon
+
+javascript:
+  $('.development.item')
+    .popup({
+      position : 'bottom left',
+      title    : '开发进行中...',
+      content  : '你现在所看到的是一个预览版的学生手册系统，部分功能暂不开放'
+    })
+  ;

@@ -42,6 +42,29 @@ $(document).on 'page:restore', ->
   $(".timeago").timeago()
 #  loader_remove()
   return
+$(document).on 'page:fetchstarting', ->
+  NProgress.start()
+  $(".timeago").timeago()
+  loader_add()
+  return
+
+$(document).on 'page:loadfetched', ->
+  NProgress.done()
+  loader_remove()
+  $(".timeago").timeago()
+  return
+
+$(document).on 'page:restorefetched', ->
+  NProgress.done()
+  loader_remove()
+  $(".timeago").timeago()
+  return
+
+$(document).on 'page:changepage', ->
+  NProgress.done()
+  loader_remove()
+  $(".timeago").timeago()
+  return
 
 $(document).ready ->
   NProgress.done()

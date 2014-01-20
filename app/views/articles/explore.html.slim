@@ -32,3 +32,62 @@
       = article.title
 
 = render 'footer'
+
+javascript:
+  ArticleInit = function() {
+    var $back, $backword, $bar, $hrefbar, if_open;
+    $back = $("#back_to_index");
+    $backword = $("#back_to_index_word");
+    if_open = false;
+    $bar = $('.sidebar');
+    $hrefbar = $('.item');
+    $back.mouseenter(function() {
+      $back.animate({
+        'width': '155px'
+      }, {
+        duration: 150,
+        easing: 'jswing',
+        complete: function() {
+          return $backword.css("display", "inline");
+        }
+      });
+    });
+    $back.mouseleave(function() {
+      $back.animate({
+        'width': '70px'
+      }, {
+        duration: 150,
+        easing: 'easeInOutCirc'
+      });
+      $backword.css("display", "none");
+    });
+    $back.click(function() {
+      $bar.sidebar('toggle');
+    });
+    $hrefbar.click(function() {
+      $bar.sidebar('toggle');
+    });
+    $(".question.submit").click(function() {
+      $("#question").form({
+        title: {
+          identifier: "question_title",
+          role: [
+            {
+              type: 'empty',
+              prompt: "请输入问题标题"
+            }
+          ]
+        },
+        content: {
+          identifier: "question_content",
+          role: [
+            {
+              type: 'empty',
+              prompt: "请输入问题描述"
+            }
+          ]
+        }
+      });
+    });
+  };
+  ArticleInit();

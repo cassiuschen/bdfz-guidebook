@@ -16,6 +16,16 @@
       a.ui.inverted.basic.button href="/explore"
         i.text.file.icon
         |   浏览手册内容
-  = render "login"
+
+javascript:
+  $('#login_click')
+    .popup({
+      position : 'bottom center',
+      title    : '开发进行中...',
+      content  : '你现在所看到的是一个预览版的学生手册系统，部分功能暂不开放'
+    })
+  ;
+
+
 
 
