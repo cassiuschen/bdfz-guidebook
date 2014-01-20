@@ -9,7 +9,7 @@ $(document).ready ->
 	$hrefbar = $('.item')
 
 	$back.mouseenter ->
-		$back.animate( {'width':'135px'} , { 
+		$back.animate( {'width':'155px'} , { 
 			duration:150,
 			easing:'jswing',
 			complete: ->
