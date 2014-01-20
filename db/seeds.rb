@@ -53,7 +53,7 @@ a1 = Article.create(
 <div class="ui small info message">
   <i class="icon info"></i>举报投诉一经查实，给予留校察看、开除学籍处分
 </div>',
-		public_at: Time.now,
+		public_at: "2013-09-01 00:00:00 +08:00",
 		last_edit_at: Time.now
 	)
 
@@ -118,7 +118,7 @@ a2 = Article.create(
 ###6 处理流程
 
 ![处理流程](/images/contain/1-1.jpg)',
-		public_at: Time.now,
+		public_at: "2013-09-01 00:00:00 +08:00",
 		last_edit_at: Time.now
 	)
 
@@ -151,7 +151,7 @@ a3 = Article.create(
 学生应尊重门卫执行规定，若强行入校，门卫有权阻止，并拉响警报。经门卫上报和监控录像查实，给予警告处分。若与门卫严重冲突，给予严重警告处分。如果强行出校，经门卫上报和监控录像查实，给予记过处分。无校园卡且非正常出、入校3次给予警告处分。
 
 18:30静校至次日6:30走读生出校属于《请假与考勤制度》中的“滞留校园”行为。凡滞留校园的学生一律从南门出校，由门卫在南门接待大厅核实身份，扣押校园卡，次日移交教导处。经教导处记录、学生签字后，归还校园卡。因学校批准而滞留学校的学生，第二天可直接到教导处取卡。18:30静校至次日6:30住宿生出校要有住宿办批准的“出入校门审批凭条”。',
-		public_at: Time.now,
+		public_at: "2013-09-01 00:00:00 +08:00",
 		last_edit_at: Time.now
 	)
 
@@ -176,7 +176,7 @@ a4 = Article.create(
 <div class="ui purple segment"><h4>责任追究</h4>
 <p>每学段累积迟到、早退、滞留校园3次给予警告处分，迟到、早退3次记为旷课1次，旷课1次给予警告处分。病假扣除模块成绩0.5分/课时。事假扣除模块成绩1分/课时。未获批准事假或旷课，扣除模块成绩2分/课时。超出时限事后补假无效，按旷课处理。</p>
 </div>',
-		public_at: Time.now,
+		public_at: "2013-09-01 00:00:00 +08:00",
 		last_edit_at: Time.now
 	)
 
@@ -191,7 +191,7 @@ a5 = Article.create(
 - **第六条** 爱护公共财物，不用大功率电器，不改变屋内物品布局。如有违犯，给予退宿。同时视情节轻重给予“警告”、“严重警告”的处分。
 - **第七条** 其他未尽详细事宜要服从住宿办老师安排和管理。
 ',
-		public_at: Time.now,
+		public_at: "2013-09-01 00:00:00 +08:00",
 		last_edit_at: Time.now
 	)
 
@@ -224,7 +224,7 @@ a6 = Article.create(
 - 凡造成图书污损、丢失将赔偿同名同版次原书。
 
 - 如原书买不到则赔偿： 70年代出版原书的50倍；80年代出版原书的20-30倍； 90年代出版原书10倍 ； 2000年后出版原书的2-5倍 ；报刊、杂志处以5倍赔偿。',
-		public_at: Time.now,
+		public_at: "2013-09-01 00:00:00 +08:00",
 		last_edit_at: Time.now
 	)
 
@@ -232,7 +232,7 @@ a7 = Article.create(
 		order: 6,
 		title: "学生宿舍住宿管理制度",
 		content: '![结构图](/images/contain/c2.jpg)',
-		public_at: Time.now,
+		public_at: "2013-09-01 00:00:00 +08:00",
 		last_edit_at: Time.now
 	)
 
@@ -240,7 +240,7 @@ a8 = Article.create(
 		order: 7,
 		title: "北大附中申优流程",
 		content: '![申优流程](/images/contain/c3.jpg)',
-		public_at: Time.now,
+		public_at: "2013-09-01 00:00:00 +08:00",
 		last_edit_at: Time.now
 	)
 
@@ -282,7 +282,7 @@ a9 = Article.create(
   - 2.12 经校园信息化管理办公室审核通过，个人可以通过在线申请在校内架设服务器。
   - 2.13 学校开放在线视频网站，但禁止观看各类淫秽不妥内容，如违犯，一经查实，学生依红色禁区处理，教师停职处理。
   - 2.14如对信息化管理有任何问题，请发送邮件至`it@pkuschool.edu.cn`},
-		public_at: Time.now,
+		public_at: "2013-09-01 00:00:00 +08:00",
 		last_edit_at: Time.now
 	)
 
@@ -321,7 +321,7 @@ a10 = Article.create(
 
         </div>
 </div>},
-		public_at: Time.now,
+		public_at: "2013-09-01 00:00:00 +08:00",
 		last_edit_at: Time.now
 	)
 
@@ -329,7 +329,7 @@ a11 = Article.create(
 		order: 10,
 		title: "北大附中文凭与奖励",
 		content: '![文凭](/images/contain/c6.jpg)',
-		public_at: Time.now,
+		public_at: "2013-09-01 00:00:00 +08:00",
 		last_edit_at: Time.now
 	)
 
@@ -411,7 +411,7 @@ a12 = Article.create(
 每学段第一周的周三需向北大附中实践与体验学习中心提交最新的社团基本资料。 每学段第一周的周三需完成上学段财务状况的公示。 每学段第一周的周五需上交该学段经费预算明细，经费的申请使用实行“预算制”。
 
 「社团联盟」需接受北大附中实践与体验学习中心的指导及审核评估。},
-		public_at: Time.now,
+		public_at: "2013-09-01 00:00:00 +08:00",
 		last_edit_at: Time.now
 	)
 
@@ -419,7 +419,7 @@ a13 = Article.create(
 		order: 12,
 		title: "北大附中传统赛事",
 		content: '![传统赛事](/images/contain/c8.jpg)',
-		public_at: Time.now,
+		public_at: "2013-09-01 00:00:00 +08:00",
 		last_edit_at: Time.now
 	)
 
@@ -446,7 +446,409 @@ a14 = Article.create(
 
 柜子使用完毕，请取出所有物品，按右侧“取”健(结束取物），再刷卡；
 
-使用中有问题，请联系：`it@pkuschool.edu.cn`},
-		public_at: Time.now,
+使用中有问题，请联系：`it@pkuschool.edu.cn`
+},
+		public_at: "2013-09-01 00:00:00 +08:00",
+		last_edit_at: Time.now
+	)
+
+a15 = Article.create(
+		order: 14,
+		title: "各部门联系人",
+		content: %{<table class="ui table segment">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>部门名称</th>
+            <th>邮箱</th>
+              <th>说明</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>-</td>
+            <td>外事对外</td>
+            <td>contact@pkuschool.edu.cn</td>
+              <td> </td>
+          </tr>
+            <tr>
+            <td>-</td>
+            <td>全校对内信息处</td>
+            <td>info@pkuschool.edu.cn</td>
+              <td> </td>
+          </tr>
+            <tr>
+            <td>1</td>
+            <td>教导处</td>
+            <td>jiaodao@pkuschool.edu.cn</td>
+              <td>4大学院教导处</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>视觉与表演艺术中心</td>
+            <td>yishu@pkuschool.edu.cn</td>
+            <td rowspan="5">5大中心</td>
+          </tr>
+            <tr>
+            <td>3</td>
+            <td>运动与健康教育中心</td>
+            <td>yundong@pkuschool.edu.cn</td>
+          </tr>
+            <tr>
+            <td>4</td>
+            <td>信息与通用技术中心</td>
+            <td>jishu@pkuschool.edu.cn</td>
+          </tr>
+             <tr>
+            <td>5</td>
+            <td>实践与体验学习中心</td>
+            <td>shijian@pkuschool.edu.cn</td>
+
+          </tr>
+             <tr>
+            <td>6</td>
+            <td>心理与升学辅导中心</td>
+            <td>fudao@pkuschool.edu.cn</td>
+          </tr>
+             <tr>
+            <td>7</td>
+            <td>信息化管理办公室</td>
+            <td>it@pkuschool.edu.cn</td>
+            <td rowspan="6">6大职能管理办公室</td>
+          </tr>
+            <tr>
+            <td>8</td>
+            <td>总务后勤办公室</td>
+            <td>zongwu@pkuschool.edu.cn</td>
+          </tr>
+            <tr>
+            <td>9</td>
+            <td>设施与采购办公室</td>
+            <td>sheshi@pkuschool.edu.cn</td>
+          </tr>
+             <tr>
+            <td>10</td>
+            <td>基础建设办公室</td>
+            <td>jijian@pkuschool.edu.cn</td>
+
+          </tr>
+             <tr>
+            <td>11</td>
+            <td>财务办公室</td>
+            <td>caiwu@pkuschool.edu.cn</td>
+          </tr>
+            
+             <tr>
+            <td>12</td>
+            <td>党政办公室</td>
+            <td>dangzheng@pkuschool.edu.cn</td>
+          </tr>
+         
+        </tbody>
+      </table>
+<table class="ui table segment">
+        <thead>
+          <tr>
+            
+            <th>部门名称</th>
+            <th>岗位名称</th>
+              <th>姓名</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="10">书院长</td>
+            <td>格物书院长</td>
+            <td>张景山</td>
+             
+          </tr>
+            <tr>
+            
+            <td>致知书院长</td>
+            <td>金文力</td>
+            
+          </tr>
+            <tr>
+          
+            <td>诚意书院长</td>
+            <td>周磊</td>
+            
+          </tr>
+          <tr>
+           
+            <td>正心书院长</td>
+            <td>单超</td>
+         
+          </tr>
+            <tr>
+           
+            <td>元培书院长</td>
+            <td>徐丹</td>
+          </tr>
+            <tr>
+       
+            <td>元培书院长助理</td>
+            <td>胡可隶</td>
+          </tr>
+             <tr>
+         
+            <td>博雅书院长</td>
+            <td>纪科</td>
+
+          </tr>
+             <tr>
+        
+            <td>博雅书院长助理</td>
+            <td>方超</td>
+          </tr>
+             <tr>
+       
+            <td>道尔顿书院长</td>
+            <td>孙玉磊</td>
+      
+          </tr>
+            <tr>
+            
+            <td>道尔顿书院长助理</td>
+            <td>杨旸</td>
+          </tr>
+            
+         
+        </tbody>
+      </table>
+<table class="ui table segment">
+          <thead>
+          <tr>
+            
+            <th>部门名称</th>
+            <th>岗位名称</th>
+            <th>姓名</th>
+            
+          </tr>
+        </thead>
+<tbody>
+<tr>
+<td rowspan="2">预科部</td>
+<td>课程主任</td>
+<td>王铮</td>
+</tr>
+<tr>
+<td>教务主任</td>
+<td>景志国</td>
+</tr>
+<tr>
+<td rowspan="2">初中部</td>
+<td>教学主任</td>
+<td>李世民</td>
+</tr>
+<tr>
+<td>学生主任</td>
+<td>方燕</td></tr>
+<tr>
+<td rowspan="2">行知学院</td>
+<td>课程主任</td>
+<td>王铮</td>
+</tr>
+<tr>
+<td>教导主任</td>
+<td>徐瑛</td></tr>
+<tr>
+<td rowspan="2">元培学院</td>
+<td>课程主任</td>
+<td>徐丹</td>
+</tr>
+<tr><td>教导主任</td><td>祝会清</td></tr>
+<tr>
+<td rowspan="2">博雅学院</td>
+<td>课程主任</td>
+<td>孙玉磊</td>
+</tr>
+<tr><td>教导主任</td><td>祝会清</td></tr>
+<tr>
+<td rowspan="3">道尔顿学院</td>
+<td>中方院长</td>
+<td>徐丹</td>
+</tr>
+<tr>
+<td>外方院长</td>
+<td>何道明</td>
+</tr>
+<tr><td>教导主任</td><td>祝会清</td></tr>
+
+<tr>
+<td colspan="2">党政办公室</td>
+<td>王文成</td>
+</tr>
+<tr>
+<td colspan="2">财务办公室</td>
+<td>李先</td>
+</tr>
+<tr>
+<td colspan="2">基建办公室</td>
+<td>任平生</td>
+</tr>
+<tr>
+<td colspan="2">总务与后勤办公室</td>
+<td>郝大鹏</td>
+</tr>
+<tr>
+<td colspan="2">采购与设施办公室</td>
+<td>张结实</td>
+</tr>
+<tr>
+<td colspan="2" rowspan="2">信息化管理办公室</td>
+<td>纪科</td>
+</tr>
+<tr><td>宋甘佳</td></tr>
+
+<tr>
+<td rowspan="8">活动课程中心</td>
+<td>运动与健康教育中心</td>
+<td>李冬梅</td>
+</tr>
+<tr>
+<td rowspan="2">视觉与表演艺术中心</td>
+<td>纪科</td>
+</tr>
+<tr><td>王冰</td></tr>
+<tr>
+<td rowspan="2">信息与通用技术中心</td>
+<td>李冬梅</td>
+</tr>
+<tr><td>毛华均</td></tr>
+<tr>
+<td rowspan="2">实践与体验学习中心 </td>
+<td>纪科</td>
+</tr>
+<tr><td>方超</td></tr>
+<tr>
+<td>心理与升学辅导中心</td>
+<td>何道明</td>
+</tr>
+</tbody>
+</table>	},
+		public_at: "2013-09-01 00:00:00 +08:00",
+		last_edit_at: Time.now
+	)
+
+a16 = Article.create(
+		order: 15,
+		title: "校园公共场地快速导引",
+		content: %{![传统赛事](/images/contain/map.jpg)},
+		public_at: "2013-09-01 00:00:00 +08:00",
+		last_edit_at: Time.now
+	)
+a17 = Article.create(
+		order: 16,
+		title: "关于学校公共场地的管理规定",
+		content: %{1. 在使用公共场所前，需提前2个工作日（不少于48小时）通过邮箱sheshi@pkuschool.edu.cn进行申请。对于学生，只有注册社团及其负责人可以申请。对于教师，只有中层干部及以上可以申请。中心社团由部门负责人进行申请。部分学生活动并非以社团的形式开展，则需单独向实践与体验学习中心`shijian@pkuschool.edu.cn`申请，获得同意后，由实践中心知会设施办公室，由设施办公室执行。
+
+2. 申请场地需明白不浪费不乱用的原则，人数应满足一定数量。在与其他学校活动不冲突的情况下，40人以上可以申请图书馆三层、图书馆四层、食堂四层、食堂舞蹈厅、黑匣子、南楼小剧场，100人以上可以申请报告厅，300人以上可以申请礼堂。
+
+3. 提出申请的12个工作小时内，场所负责人会给出审批意见。活动负责人应同场所负责人联系，沟通所需设备及特殊需求。活动开始半小时前，活动负责人应与场所负责人落实设备准备情况。
+
+4. 申请者应及时组织学生入场，按照约定时间进入场地，若超过约定时间半个小时，则取消本次使用申请并记录在案。活动应按约定时间进行，不可过多耽搁时间，以免影响下一场活动。
+
+5. 活动期间，应保持场地卫生。活动结束后，清理场地，带走废弃物品。活动负责人应与场所负责人一同检查设备的完好状况。如由损坏，由申请负责人进行赔偿。},
+		public_at: "2013-09-01 00:00:00 +08:00",
+		last_edit_at: Time.now
+	)
+a18 = Article.create(
+		order: 17,
+		title: "专业教室管理",
+		content: %{专业教室实行教师负责制，教师应负责专业教室内的设备管理及门的开关。
+
+开学第一周内，由总务处与设施办公室一起与任课教师检查落实专业教室内的设备，并签字确认。学期结束时，设施办公室负责对专业教室内的设施进行维修维护，由总务处、设施办公室一起与老师进行交接。
+
+学期间，若设备出现问题，应第一时间报设施办公室进行处理，若有设备丢失，则应第一时间报总务进行查处。
+
+专业教室门禁只对在本教室的上课教师进行授权，上课期间，教师应及时开门。非上课期间，若无老师在专业教室，则教师应锁上专业教室后门和前门。请不要用物品阻挡门的关闭，这样会对闭门器造成损坏。学生可在书院活动室或图书馆学习活动。
+
+学生应保持专业教室内的卫生，不随地丢弃物品，不在墙上乱涂乱画。教师可组织学生打扫专业教室卫生，确保专业教室干净整洁。},
+		public_at: "2013-09-01 00:00:00 +08:00",
+		last_edit_at: Time.now
+	)
+a19 = Article.create(
+		order: 18,
+		title: "书院活动室的管理及规定",
+		content: %{书院活动室原为单元活动室，为了提供给各位书院学生有自己的生活空间，以及文化传承的地方。
+
+书院活动室原则为自治管理。在不违反学校的整体制度及规则的前提下，各书院自行制定相应的管理制度。
+
+学校为书院活动室提供装修的经费，所有资产归属于学校，登记在书院长或书院长助理［以下均只简称书院长］名下，由书院长负责。
+
+鉴于书院为学生自治管理的原则，权利及责任均需匹配，学生有自行管理的权利，同时也需要承担相应的责任。
+
+如果出现损坏、丢失的情况，均由书院学生全体承担相应费用。
+
+同时，书院活动室已经装了电子门禁系统，各活动只有该书院的学生及书院长有权利进入。
+
+为了管理的责任明晰，请保持活动室的门长闭，如发现用物品阻挡门使其无法关上，则禁止使用书院活动室一周作为惩罚。},
+		public_at: "2013-09-01 00:00:00 +08:00",
+		last_edit_at: Time.now
+	)
+a20 = Article.create(
+		order: 19,
+		title: "书院活动室装修流程及说明",
+		content: %{![书院活动室装修流程及说明](/images/contain/c19.jpg)},
+		public_at: "2013-09-01 00:00:00 +08:00",
+		last_edit_at: Time.now
+	)
+a21 = Article.create(
+		order: 20,
+		title: "各书院集会地点",
+		content: %{<table class="ui table segment">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>书院名称</th>
+            <th>地点信息</th>
+              
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>格物书院</td>
+            <td>图书馆3层</td>
+          </tr>
+            <tr>
+            <td>2</td>
+            <td>致知书院</td>
+            <td>图书馆4层</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>诚意书院</td>
+            <td>食堂5层舞蹈排练室</td>
+          </tr>
+            <tr>
+            <td>4</td>
+            <td>正心书院</td>
+            <td>食堂4层会议厅</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>元培书院</td>
+            <td>南楼阅览大厅</td>
+          </tr>
+            <tr>
+            <td>6</td>
+            <td>博雅书院</td>
+            <td>黑匣子剧场</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>道尔顿书院</td>
+            <td>南楼小剧场</td>
+          </tr>
+           
+         
+        </tbody>
+      </table>},
+		public_at: "2013-09-01 00:00:00 +08:00",
 		last_edit_at: Time.now
 	)

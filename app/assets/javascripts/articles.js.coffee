@@ -1,7 +1,4 @@
-jQuery.easing.def = "easeInOutCirc"
-
-
-$(document).ready ->
+ArticleInit = ->
 	$back = $("#back_to_index")
 	$backword = $("#back_to_index_word")
 	if_open = false
@@ -43,4 +40,15 @@ $(document).ready ->
 				]
 		return
 	return
+$(document).ready ->
+	ArticleInit()
+	return
+$(document).on 'page:loadfetched', ->
+	ArticleInit()
+$(document).on 'page:restorefetched', ->
+ 	ArticleInit()
+ 	return
+$(document).on 'page:changepage', ->
+ 	ArticleInit()
+ 	return
 
