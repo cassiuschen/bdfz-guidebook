@@ -1,22 +1,22 @@
 .header.container id="article_show_page"
   .show.article.ui.celled.grid
     .row
-      .two.wide.column
-        b 标题：
-      .eight.wide.column
+      .one.wide.column
+        b 标题
+      .seven.wide.column
         = @article.title
       .two.wide.column
         b 创建于：
-      = timeago(@article.created_at, :class => "one wide column")
+      = timeago(@article.public_at, :class => "two wide column")
       .two.wide.column
         b 最后更新：
-      = timeago(@article.updated_at, :class => "one wide column")
+      = timeago(@article.updated_at, :class => "two wide column")
     .row
       .twelve.wide.column
         .article.content
           == $markdown.render(@article.content)
       .four.wide.column
-        .ui.vertical.text.menu
+        .ui.vertical.text.menu 
           .header.item 文档操作
           a.active.item
             i.home.icon
@@ -44,17 +44,18 @@
                   | 1432101     
                   = span_timeago(question.created_at, :class => "date")
                 = question.title
-          form.ui.reply.form
-            .field
-              textarea
-            .ui.fluid.blue.labeled.submit.icon.button
-              i.edit.icon
-              | 添加回复
     .row
       .sixteen.wide.column
         .ui.ignored.info.message
           | 你可以在这里写下你针对#{@article.title}的问题或建议，以供学校对此进行说明或整改。
         = form_for([@article, @article.questions.build], html: {class: "ui form segment", id: "question"}) do |f|
+          .ui.inverted.dimmer.visible.active
+            .content
+              .center
+                .ui.icon.header
+                  | 功能尚未开放 
+                  .sub.header
+                    | 请期待后续更新
           .ui.error.message
             .header#notice = notice
           .field

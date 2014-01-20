@@ -63,13 +63,45 @@ $(document).ready ->
 	$bg.load ->
 		resizeImg()
 		return
-	window.addEventListener "resize", ->
-		resizeImg()
-		return
+	return
+
+
+$bg = $("#bg")
+bw = $bg.width()
+bh = $bg.height()
+use_height = ->
+	$bg.removeClass "use_width"
+	$bg.addClass "use_height"
+	return
+use_width = ->
+	$bg.removeClass "use_height"
+	$bg.addClass "use_width"
+	return
+resizeImg = ->
+	$w = $(window)
+	wh = $w.height()
+	ww = $w.width()
+	wp = 10000 * wh / ww
+	bp = 10000 * bh / bw 
+	#resizeImg(bh,bw)
+	switch
+		when wp > bp then use_height()
+		when wp = bp then use_width()
+		when wp < bp then use_width()
 	return
 window.addEventListener "resize", ->
 	resizeImg()
 	return
+$(document).on 'page:loadfetched', ->
+	resizeImg()
+
+$(document).on 'page:restorefetched', ->
+ 	resizeImg()
+ 	return
+$(document).on 'page:changepage', ->
+ 	resizeImg()
+ 	return
+
 	
 #	lf = $("#login")
 #	lc = lf.children()
