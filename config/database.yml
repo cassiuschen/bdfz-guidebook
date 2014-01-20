@@ -21,5 +21,11 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  database: bdfz_guidebook_production
+  username:        # if using username/password auth
+  password:         # if using username/password auth
+  host: localhost                # if not localhost
+  pool: 5         # size of DB connection pool *per process*
+  timeout: 5000
+
