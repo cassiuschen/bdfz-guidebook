@@ -23,8 +23,8 @@ test:
 production:
   adapter: postgresql
   database: bdfz_guidebook_production
-  username:        # if using username/password auth
-  password:         # if using username/password auth
+  username: postgres     # if using username/password auth
+  #password:         # if using username/password auth
   host: localhost                # if not localhost
   pool: 5         # size of DB connection pool *per process*
   timeout: 5000
