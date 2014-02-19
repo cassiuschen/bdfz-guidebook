@@ -10,70 +10,10 @@
 # Read Sprockets README (https:#github.com/sstephenson/sprockets#sprockets-directives) for details
 # about supported directives.
 #
-# require jquery
+#= require jquery
 #= require jquery_ujs
 #= require turbolinks
+#= require bootstrap
 #= require nprogress
 #= require nprogress-turbolinks
-#= require semantic-ui
-#= require timeago
-# require_tree .
-NProgress.configure
-  showSpinner: true
-  ease: 'ease'
-  speed: 500
-
-loader_remove = ->
-	$("#loader").removeClass "active"
-	return
-
-loader_add = ->
-	$("#loader").addClass "active"
-	return
-
-$(document).on 'page:fetch', ->
-  NProgress.start()
-  $(".timeago").timeago()
-#  loader_add()
-  return
-
-$(document).on 'page:restore', ->
-  NProgress.remove()
-  $(".timeago").timeago()
-#  loader_remove()
-  return
-$(document).on 'page:fetchstarting', ->
-  NProgress.start()
-  $(".timeago").timeago()
-  loader_add()
-  return
-
-$(document).on 'page:loadfetched', ->
-  NProgress.done()
-  loader_remove()
-  $(".timeago").timeago()
-  return
-
-$(document).on 'page:restorefetched', ->
-  NProgress.done()
-  loader_remove()
-  $(".timeago").timeago()
-  return
-
-$(document).on 'page:changepage', ->
-  NProgress.done()
-  loader_remove()
-  $(".timeago").timeago()
-  return
-
-$(document).ready ->
-  NProgress.done()
-#  loader_remove()
-  return
-
-
-$(document).ready ->
-	$(".timeago").timeago()
-
-$(document).load ->
-	$(".timeago").timeago()
+#= require_tree .

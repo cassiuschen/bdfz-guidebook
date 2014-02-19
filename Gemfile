@@ -2,7 +2,7 @@ source 'http://ruby.taobao.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.0.beta1'
+gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -11,9 +11,9 @@ gem 'slim'
 gem 'slim-rails'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0.rc1'
-gem 'semantic-ui-sass'
+gem 'sass-rails'
 gem 'nprogress-rails'
+gem 'bootstrap-sass'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -63,9 +63,15 @@ gem 'hiredis'
 gem 'redis', :require => ["redis", "redis/connection/hiredis"]
 gem 'active_model_serializers'
 gem 'html_truncator'
+
+# CAS Server
+gem 'rubycas-client'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
+gem 'better_errors', group: [:development, :test]
+gem "binding_of_caller", group: [:development, :test]
 

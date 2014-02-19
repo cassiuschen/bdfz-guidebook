@@ -1,0 +1,108 @@
+///////////////////////////////////////////////////////////////////
+/*==================================*/
+/*            NavBar               */
+/*   Author:     Cassius Chen    */
+/*   Time:               2014.2    */
+/*==================================*/
+///////////////////////////////////////////////////////////////////
+.ActingButtonOfNav {
+	-webkit-font-smoothing: antialiased;
+	-webkit-transition-delay: 0s;
+	-webkit-transition-duration: 0.218s;
+	-webkit-transition-property: border-color;
+	-webkit-transition-timing-function: ease;
+	border-bottom-color: $nav-link;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	border-left-color: $nav-link;
+	border-right-color: $nav-link;
+	border-top-color: $nav-link;
+	color: rgb(38, 38, 38);
+	border-bottom-color: $nav-link;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	border-left-color: $nav-link;
+	border-right-color: $nav-link;
+	border-top-color: $nav-link;
+}
+nav.acd {
+	background-color: $white;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.14902) 0px 2px 4px 0px !important;
+	-webkit-font-smoothing: antialiased;
+	-webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+	-webkit-transition-delay: 0s;
+	-webkit-transition-duration: 0.15s;
+	-webkit-transition-property: top;
+	-webkit-transition-timing-function: ease;
+	box-shadow: rgba(0, 0, 0, 0.14902) 0px 2px 4px 0px !important;
+	font-size: 13px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	height: 44px;
+	transition-delay: 0s;
+	transition-duration: 0.15s;
+	transition-property: top;
+	transition-timing-function: ease;
+	visibility: visible;
+	z-index: 11;
+	border-width: 0 0 0 !important;
+	min-height: 44px !important;
+	a.acd.logo {
+		padding-bottom: 0px !important;
+		padding-top: 0px !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		width: 44px !important;
+		height: 44px !important;
+		background-image: asset-url('logo@44x44.svg');
+	}
+	ul.nav.navbar-nav {
+		height: 44px;
+		line-height: normal;
+		margin-bottom: 0px;
+		margin-left: 5%;
+		transition-property: padding-right;
+		transition-timing-function: cubic-bezier(0, 1.12, 0.39, 0.98);
+		visibility: visible;
+		li {
+			vertical-align: top;
+			white-space: nowrap;
+			width: auto;
+			cursor: pointer;
+			margin-bottom: 0px;
+			font-weight: normal;
+			margin-left: 18px;
+			margin-right: 18px;
+			margin-top: 0px;
+			max-width: 180px;
+			min-width: 20px;
+			outline-color: rgb(38, 38, 38);
+			outline-style: none;
+			outline-width: 0px;
+			overflow-x: hidden;
+			overflow-y: hidden;
+			text-decoration: none solid rgb(38, 38, 38);
+			text-overflow: ellipsis;
+			a {
+				line-height: 19px !important;
+				background-color: $white !important;
+				padding-bottom: 10px !important;
+				padding-top: 13px !important;
+				padding-left: 0 !important;
+				padding-right: 0 !important;
+			}
+		}
+		li:hover {
+			-webkit-transition:border-color .218s !important;
+			transition:border-color .218s !important;
+			-webkit-transition:color .218s !important;
+			transition:color .218s;
+			@extend .ActingButtonOfNav;
+		}
+		li.active {
+			@extend .ActingButtonOfNav;
+			font-weight: bold;
+		}
+	}
+}

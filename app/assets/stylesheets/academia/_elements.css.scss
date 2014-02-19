@@ -1,0 +1,59 @@
+.acd.float.tip {
+	.logo {
+		background: no-repeat asset-url('g-bg1.png') -171px 0;
+		display: block;
+		height: 20px;
+		margin: 10px auto 0 auto;
+		width: 20px;	
+	}
+	.text {
+		line-height: 1.4;
+		margin: 5px 5px 5px 5px;
+		overflow: hidden;
+		white-space: normal;
+	}
+	-webkit-transition: top .15s,opacity .15s;
+	transition: top .15s,opacity .15s;
+	-webkit-user-select: none;
+	cursor: pointer;
+	display: block;
+	height: auto;
+	min-height: 60px;
+	max-width: 75px;
+	min-width: 50px;
+	outline: none;
+	padding: 0 0 0 0;
+	position: absolute;
+	top: 40%;
+	left: 3%;
+	background-color: $blue-link;
+	background-image: -webkit-linear-gradient(top,transparent,transparent);
+	color: $white;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	white-space: nowrap;
+	margin-right: 16px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	line-height: 28px;
+}
+
+textarea.acd {
+	border-radius: 0px !important;
+	max-height: 65px;
+	width: 100%;
+	height: 65px;
+	border-color: $tiny-gray;
+	border-style: solid;
+	border-width: 0.5px !important;
+	border-left-width: 2px;
+}
+textarea.acd:focus {
+	@include transform(border-left-width, .218s);
+	@include transform(border-width, .218s);
+	border-color: $blue-link;
+	border-style: solid;
+	border-width: 1px !important;
+	border-left-width: 7px !important;
+}
