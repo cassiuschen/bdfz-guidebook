@@ -1,8 +1,8 @@
 .container
   .row
-    .col-md-4
+    .col-md-4.hidden-xs
       .acd.page
-        .acd.main.content.hidden-sm#affix-bar
+        .acd.main.content#affix-bar
           .body.onspy
             .acd.article-info-header
               .acd.title 目录
@@ -12,6 +12,30 @@
                   li
                     a href="##{article.order}"
                       = article.title
+                  javascript:
+                    $('a[href="##{article.order}"]').click(function(){
+                      var href = $(this).attr("href");
+                      var pos = $(href).offset().top;
+                      $("html,body").animate({scrollTop: pos}, 1000);
+                      return false;});
+    .col-md-4.visible-xs
+      .acd.page
+        .acd.main.content
+          .body
+            .acd.article-info-header
+              .acd.title 目录
+            .acd.article
+              ul.nav.spy
+                - @articles.each do |article|
+                  li
+                    a href="##{article.order}"
+                      = article.title
+                  javascript:
+                    $('a[href="##{article.order}"]').click(function(){
+                      var href = $(this).attr("href");
+                      var pos = $(href).offset().top;
+                      $("html,body").animate({scrollTop: pos}, 1000);
+                      return false;});
     .col-md-12 data-spy="scroll" data-target="onspy"
       - @articles.each do |article|
         .acd.page  id = article.order
