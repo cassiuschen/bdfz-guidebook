@@ -17,4 +17,5 @@
 @mixin transform($motion,$time) {
 	-webkit-transition: $motion $time;
 	transition: $motion $time;
+	-o-transition: $motion $time;
 } 

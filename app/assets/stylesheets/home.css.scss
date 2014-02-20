@@ -1,0 +1,156 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'mixin';
+.home.index {
+	margin: 0;
+	padding: 0;
+}
+#login {
+	background-image: asset-url('bg.jpg');
+}
+img.background  {
+	top: auto;
+	left: auto;
+	position: fixed;
+	right: auto;
+	bottom: auto;
+}
+#login_form {
+	background-image: asset-url('bg.jpg');
+}
+.use_height {
+	height: 100%;
+	width: auto;
+}
+.use_width {
+	height: auto;
+	width: 100%;
+}
+.ui.dimmer { background-color: rgba(0, 0, 0, 0.6) !important}
+#login.active {
+	margin-top: -335px !important;
+	height: 335px !important;
+}
+
+#full-screen-slider { width:100%; height:396px; float:left; position:relative}
+#slides { display:block; width:100%; height:396px; list-style:none; padding:0; margin:0; position:relative}
+#slides li { display:block; width:100%; height:100%; list-style:none; padding:0; margin:0; position:absolute}
+#slides li a { display:block; width:100%; height:100%; text-indent:-9999px}
+#pagination { display:block; list-style:none; position:absolute; left:50%; top:340px; z-index:9900;  padding:5px 15px 5px 0; margin:0}
+#pagination li { display:block; list-style:none; width:10px; height:10px; float:left; margin-left:15px; border-radius:5px; background:#FFF }
+#pagination li a { display:block; width:100%; height:100%; padding:0; margin:0;  text-indent:-9999px;}
+#pagination li.current { background:#0092CE}
+
+#bg-img {
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -5;
+	background-position: center 0;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	zoom: 1;
+}
+#bg-img-1 {
+	@extend #bg-img;
+	background-image: asset-url("s-01.jpg");
+}
+#bg-img-2 {
+	@extend #bg-img;
+	background-image: asset-url("s-02.jpg");
+}
+div#bg-img-3 {
+	@extend #bg-img;
+	background-image: asset-url("s-03.jpg");
+}
+div#bg-img-4 {
+	@extend #bg-img;
+	background-image: asset-url("s-04.jpg");
+}
+.hover {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,.5);
+}
+.main-title {
+	color: #fff;
+	height: 385px;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	margin-top: -176px;
+	width: 100%;
+	pointer-events: none;
+	text-align: center;
+	z-index: 10;
+	.title-container {
+		width: 75%;
+		margin: 0 auto;
+		h1 {
+			list-style: none;
+			padding: 0;
+			//margin: 10px 0 0;
+			position: relative;
+			height: 100px;
+			//font-size: 100px;
+			font-weight: 300;
+			text-align: center;
+			letter-spacing: 5px;
+			text-transform: uppercase;
+			z-index: 100;
+		}
+		.spacer {
+			width: 60px;
+			margin: 20px auto 20px;
+			height: 2px;
+			background: #4cddf3;
+		}
+		.second-title {
+			//font-size: 24px;
+			//font-family: 'Open Sans',sans-serif!important;
+			//width: 680px;
+			text-transform: none;
+			margin: auto;
+			font-weight: 400;
+		}
+		a.explore {
+			.index-btn {
+				width: 200px;
+				margin: 40px auto 0;
+				height: auto;
+				z-index: 10;
+				position: relative;
+				color: #fff;
+				font-size: 14px;
+				text-transform: uppercase;
+				font-weight: 700;
+				text-align: center;
+				padding: 11px 25px;
+				cursor: pointer;
+				border: 2px solid #4cddf3;
+				border-radius: 2px;
+				letter-spacing: 2px;
+				pointer-events: auto;
+				-webkit-transition: all .1s ease-in-out;
+				transition: all .1s ease-in-out;
+			}
+			.index-btn:hover {
+				@include transform(border-color,.218s);
+				@include transform(color,.218s);
+				color: #fff;
+				border-color: #fff;
+			}
+		}
+	}
+}
