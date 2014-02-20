@@ -1,6 +1,6 @@
 .container
   .row
-    .col-md-4.hidden-xs
+    .col-md-4.visible-lg.visible-md.hidden-print
       .acd.page
         .acd.main.content#affix-bar
           .body.onspy
@@ -18,7 +18,7 @@
                       var pos = $(href).offset().top;
                       $("html,body").animate({scrollTop: pos}, 1000);
                       return false;});
-    .col-md-4.visible-xs
+    .col-md-4.visible-xs.visible-sm.hidden-print
       .acd.page
         .acd.main.content
           .body
