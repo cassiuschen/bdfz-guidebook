@@ -1,24 +1,24 @@
-    nav.navbar.navbar-default.navbar-fixed-top.acd role="navigation"
-      .navbar-header
-        button.navbar-toggle type="button" id="mobile-menu" href="/"
-          span.sr-only NavBar 
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
-        a.navbar-brand.acd.logo href=root_path
-      .acd.collapse.navbar-collapse#example-navbar
-        ul.nav.navbar-nav.main
-          /li = link_to '首页', root_path
-          li class=('active' if controller_name == "courses" && request.path != '/about')
-              = link_to '选课指南', courses_path
-          li class=('active' if request.path == '/about')
-              = link_to '关于', about_path
-        ul.nav.navbar-nav.navbar-right
-            - unless @current_user.nil?
-              li
-                a
-                  | 欢迎您,
-                  = @current_user.name
-              li = link_to '登出', logout_path
-            - else
-              li = link_to "登陆", login_path
+nav.navbar.navbar-default.navbar-fixed-top.acd role="navigation"
+  .navbar-header
+    button.navbar-toggle type="button" id="mobile-menu" href="/"
+      span.sr-only NavBar 
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    a.navbar-brand.acd.logo href=root_path
+  .acd.collapse.navbar-collapse#example-navbar
+    ul.nav.navbar-nav.main
+      /li = link_to '首页', root_path
+      li class=('active' if controller_name == "courses" && request.path != '/about')
+          | 11
+      li class=('active' if request.path == '/about')
+          | 关于
+/    ul.nav.navbar-nav.navbar-right
+/        - unless @current_user.nil?
+/          li
+/            a
+/              | 欢迎您,
+/              = @current_user.name
+/          li = link_to '登出', logout_path
+/        - else
+/          li = link_to "登陆", login_path

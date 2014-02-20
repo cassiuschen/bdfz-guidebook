@@ -56,3 +56,12 @@ a:hover{ text-decoration: none !important; }
   font-weight: 300;
   src: url(/fonts/rotobo300.woff) format('woff');
 }
+.content {
+  img { width: 100%; }
+}
+
+.col-md-4 {
+  .affix {
+    width: 25% !important;
+  }
+}

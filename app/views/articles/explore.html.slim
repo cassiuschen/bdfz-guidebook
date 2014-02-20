@@ -1,42 +1,23 @@
-.ui.black.huge.launch.right.attached.button style="width: 70px;" id="back_to_index"
-  i.icon.list.layout
-  span.text style="display: none;" id="back_to_index_word" 菜单
-.ui.grid
-  .twelve.wide.column id="content"
-    .ui.center.aligned.icon.header
-      i.circular.book.icon
-      a.ui.big.header 北大附中学生手册
-      .sub.header
-        | #{better_version(@last_edit)} 修订版本
-    .ui.horizontal.divider
-      | 正文
-    - @articles.each do |article|
-      section id = article.order
-        h2.ui.header
-          = article.title
-          .ui.pointing.left.label
-            | #{better_time(article.updated_at)   }修订
-        td == $markdown.render(article.content)
-        - unless article == @articles.last
-          .ui.section.divider
-    .ui.horizontal.divider
-      | 完
-
-.ui.vertical.sidebar.floated.menu
-  = link_to root_path, :class => "item" 
-    i.home.icon
-    | 返回首页
-  - for article in @articles
-    a.item href="##{article.order}" id="hrefbar-#{article.order}"
-      i.book.icon
-      = article.title
-
-
 .container
   .row
-    .col-md-10
+    .col-md-4
+      .acd.page
+        .acd.main.content.affix.hidden-sm
+          .body
+            .acd.article-info-header
+              .acd.title 目录
+            .acd.article
+              .description
+                .text
+                  .content
+                    ul.nav
+                      - @articles.each do |article|
+                        li
+                          a href="##{article.order}"
+                            = article.title
+    .col-md-12
       - @articles.each do |article|
-        .acd.page
+        .acd.page id = article.order
           .acd.main.content
             .header
               .labels
@@ -49,23 +30,15 @@
                     h3.title
                       a.title = article.title
                     span.sub.title
-                      span.subject = @course.teacher
+                      span.subject 
                       | 老师
                       | &nbsp;-&nbsp;
                       span.timeago
                         | #{better_time(article.updated_at)}修订
-/                .acd.tip
-/                  .items
-/                    .acd.item
-/                      span.acd.tip-holder
-/                      a.acd.tip-content.shadow 
-/                        |#
-/                        = @course.subject
               .acd.article
                 .description
                   .text
                     .content
                       == $markdown.render(article.content)
-
 
 

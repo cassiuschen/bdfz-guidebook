@@ -17,9 +17,6 @@ gem 'bootstrap-sass'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-gem 'guard-rspec'
-gem 'rb-inotify'
-gem 'libnotify'
 gem 'markdown'
 gem 'redcarpet'
 gem 'less'
@@ -71,7 +68,7 @@ gem 'rubycas-client'
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-gem 'debugger', group: [:development, :test]
+#gem 'debugger', group: [:development, :test]
 gem 'better_errors', group: [:development, :test]
 gem "binding_of_caller", group: [:development, :test]
 
