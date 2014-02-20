@@ -2,19 +2,19 @@
   .row
     .col-md-4
       .acd.page
-        .acd.main.content.affix.hidden-sm
-          .body
+        .acd.main.content.hidden-sm#affix-bar
+          .body.onspy
             .acd.article-info-header
               .acd.title 目录
-            .acd.article.onspy
-              ul.nav
+            .acd.article
+              ul.nav.spy
                 - @articles.each do |article|
                   li
                     a href="##{article.order}"
                       = article.title
-    .col-md-12
+    .col-md-12 data-spy="scroll" data-target="onspy"
       - @articles.each do |article|
-        .acd.page id = article.order
+        .acd.page  id = article.order
           .acd.main.content
             .header
               .labels
@@ -22,11 +22,11 @@
                 = article.title
             .body
               .title
-                .content
+                .content#explore
                   header.acd
-                    h3.title
+                    h3.title#e-title
                       a.title = article.title
-                    span.sub.title
+                    span.sub.title#e-subtitle
                       span.subject 
                       | 老师
                       | &nbsp;-&nbsp;
@@ -38,4 +38,9 @@
                     .content
                       == $markdown.render(article.content)
 
+
+
+javascript:
+	var $originWidth = $('#affix-bar').width();
+	$('.onspy').css("width",$originWidth);
 

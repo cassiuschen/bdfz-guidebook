@@ -129,9 +129,19 @@
 			}
 			.acd.article {
 				margin: 0 0 0 0;
-				padding: 0 20px 0 20px;
 				text-overflow: ellipsis;
+				ul.spy {
+					color: $light-black;
+					.active {
+						border-right: 2px solid $blue-link;
+					}
+					li { a {
+						color: $light-black
+						} 
+					}
+				}
 				.description {
+					padding: 0 20px 0 20px;
 					.text {
 						color: #404040;
 						font-size: 13px;

@@ -8,11 +8,13 @@ nav.navbar.navbar-default.navbar-fixed-top.acd role="navigation"
     a.navbar-brand.acd.logo href=root_path
   .acd.collapse.navbar-collapse#example-navbar
     ul.nav.navbar-nav.main
-      /li = link_to '首页', root_path
+      li = link_to '首页', root_path
+      li class=('active' if controller_name == "explore")
+        = link_to '浏览全文', explore_path
       li class=('active' if controller_name == "courses" && request.path != '/about')
-          | 11
+          a 11
       li class=('active' if request.path == '/about')
-          | 关于
+          a 关于
 /    ul.nav.navbar-nav.navbar-right
 /        - unless @current_user.nil?
 /          li

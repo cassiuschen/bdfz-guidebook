@@ -21,6 +21,7 @@ $text-color: #262626;
 $link-color: $blue-link;
 $grid-columns: 16;
 $grid-gutter-width: 0px;
+$font-size-base: 14px;
 @import 'bootstrap';
 
 // Academia Custom Styles
@@ -58,10 +59,4 @@ a:hover{ text-decoration: none !important; }
 }
 .content {
   img { width: 100%; }
-}
-
-.col-md-4 {
-  .affix {
-    width: 25% !important;
-  }
 }
