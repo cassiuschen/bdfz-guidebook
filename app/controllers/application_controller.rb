@@ -4,9 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   $markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => false)
 
-  $admin = %w(1423101)
+  $admin = %w(1423101 F0000Q1207 F0000L0011)
   def is_admin?
-  	if $admin.include?session[:cas_user]
+  	if $admin.include?session[:cas_user].upcase
     	session[:admin] = true
     else
   		session[:admin] = false
