@@ -4,16 +4,17 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   $markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => false)
 
-  def login_with_cas
-  	if session[:cas_user] ==
-    	@current_user = User.find_by school_id: session[:cas_user]
+  $admin = %w(1423101)
+  def is_admin?
+  	if $admin.include?session[:cas_user]
+    	session[:admin] = true
     else
-  		@current_user = User.create!(
-  				school_id: session[:cas_user].to_i,
-  				name: session[:cas_user],
-  				password: session[:cas_user]
-  			)
+  		session[:admin] = false
     end
-  	#end
+  end
+
+  def logout
+  	reset_session
+    CASClient::Frameworks::Rails::Filter.logout(self)
   end
 end

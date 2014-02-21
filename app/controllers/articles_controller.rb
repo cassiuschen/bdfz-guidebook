@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  before_filter CASClient::Frameworks::Rails::Filter, :if_admin
+  before_action CASClient::Frameworks::Rails::Filter, :is_admin?
+  before_action :only_admin
 
   # GET /articles
   # GET /articles.json
@@ -91,6 +92,11 @@ class ArticlesController < ApplicationController
   end
 
   private
+    def only_admin
+      if session[:admin] == false
+        redirect_to root_url
+      end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])
