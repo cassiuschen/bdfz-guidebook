@@ -1,17 +1,26 @@
-.ui.fixed.transparent.inverted.menu
-  .container
-    = link_to articles_path, :class => "title item"
-      b 学生手册
-      | : #{@title}
-    .right.menu
-      a.icon.development.item
-        i.warning.out.icon
+nav.navbar.navbar-default.navbar-fixed-top.acd.hidden-print role="navigation"
+  .navbar-header
+    button.navbar-toggle type="button" id="mobile-menu" href="/"
+      span.sr-only NavBar 
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    a.navbar-brand.acd.logo href=root_path
+  .acd.collapse.navbar-collapse#mobile-menu
+    ul.nav.navbar-nav.main
+      li = link_to '首页', root_path
+      li class=('active' if controller_name == "explore")
+        = link_to '浏览全文', explore_path
+      - if session[:admin] == true
+        li class=('active' if controller_name == "articles")
+          = link_to '详细阅览', articles_path
 
-javascript:
-  $('.development.item')
-    .popup({
-      position : 'bottom left',
-      title    : '开发进行中...',
-      content  : '你现在所看到的是一个预览版的学生手册系统，部分功能暂不开放'
-    })
-  ;
+    ul.nav.navbar-nav.navbar-right
+        - if session[:cas_user]
+          li
+            a
+              | 欢迎您,
+              = session[:cas_user]
+          li = link_to '登出', logout_path
+        - else
+          li = link_to "管理员登陆", articles_path

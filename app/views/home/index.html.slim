@@ -1,31 +1,17 @@
-= image_tag "b-0#{@rand_image}.jpg" , :class => "background" , :id => "bg"
+div id="bg-img-#{@rand_image}"
+.hover
+.main-title
+  .title-container.container
+    h1 北大附中学生手册
+    .spacer
+    h4.second-title
+      | #{better_version(@last_edit)} 最后修订
+    = link_to explore_path, class: "explore"
+      .index-btn
+        | 浏览手册内容
 
-.ui.page.dimmer.visible.active
-  .content
-    .center
-      h2.ui.inverted.icon.header
-         i.icon.circular.inverted.emphasized.blue.book
-         | 北大附中学生手册
-         .sub.header
-           | #{better_version(@last_edit)} 最后修订
-      br /
-      button.ui.inverted.basic.button id="login_click"
-        i.user.icon
-        | 登陆以修订手册
-
-      a.ui.inverted.basic.button href="/explore"
-        i.text.file.icon
-        |   浏览手册内容
-
-javascript:
-  $('#login_click')
-    .popup({
-      position : 'bottom center',
-      title    : '开发进行中...',
-      content  : '你现在所看到的是一个预览版的学生手册系统，部分功能暂不开放'
-    })
-  ;
-
-
-
-
+.acd.login-btn
+  - if session[:cas_user]
+    = link_to "#{session[:cas_user]}登出", logout_path, :class => "acd small btn"
+  - else
+    = link_to "登陆", articles_path, :class => "acd small btn"

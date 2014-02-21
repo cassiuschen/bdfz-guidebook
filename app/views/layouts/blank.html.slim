@@ -1,13 +1,12 @@
 doctype html
 html
   head
-    meta content="width=device-width, initial-scale=1.0" name="viewport"
-    title 学生手册
+    meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    title 北大附中学生手册
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    script src="http://assets.cloud.bdfzer.com/jquery.js" 
-    script src="http://assets.cloud.bdfzer.com/easing.js"
+    = stylesheet_link_tag    "#{controller_name}", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = javascript_include_tag "#{controller_name}", "data-turbolinks-track" => true 
     = csrf_meta_tags
-  body class=("#{controller_name} #{action_name}") data-controller-name="#{controller_name}"
-    = yield
+  body class=("#{session[:cas_user]} #{controller_name} #{action_name} #{@current_user}") data-controller-name="#{controller_name} #{request.path}"
+    == yield

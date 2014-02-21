@@ -1,12 +1,36 @@
-.segment
-  .header.container
-    .pageheader
-      h1.ui.dividing.header 新建文档
-      p
-        | 请务必填写文档序号，最终生成统一文档时我们会按照序号排序。
-    = link_to articles_path, :class => "ui basic labeled icon toggle overview button"
-      | 返回文档列表
-      i.reply.mail.icon
-.body.container
-  == render 'form'
-  = render 'footer'
+.container
+  .row
+    .col-md-11
+      .acd.page
+        .acd.main.content
+          .header
+            .labels
+              a.text 
+                | 新建文档 |  请务必填写文档序号，最终生成统一文档时我们会按照序号排序。       
+              = link_to articles_path
+                | 取消修改
+          .body
+            .acd.article
+              .description
+                .text
+                  .content
+                    == render 'form'
+
+    .col-md-5
+      .acd.page
+        .acd.comments.main.content
+          .body
+            .acd.article-info-header
+              .acd.title 写作说明
+            .acd.article
+              .description
+                .text
+                  .content
+                    li 
+                      | 文章内容中的标题用`###`开头并在#后填写你想要的内容，二级标题用`####`开头，以此类推。
+                    li 
+                      | 文章换行需要按动两次回车。
+                    li 
+                      | 使用形如`![结构图](/images/demo.jpg)`添加图片，方括号里是图片名称，圆括号里是图片地址。如果要把图片放在服务器上，请联系管理员。
+                    li 
+                      | 用`-`表示一条，并在短横后加空格开始写内容。两条之间换行不用换两行。

@@ -1,0 +1,65 @@
+///////////////////////////////////////////////////////////////////
+/*==================================*/
+/*            Effect               */
+/*   Author:     Cassius Chen     */
+/*   Time:               2014.2     */
+/*==================================*/
+///////////////////////////////////////////////////////////////////
+.acd.shadow {
+	-webkit-transition: box-shadow .218s ease,color .218s ease;
+	transition: box-shadow .218s ease,color .218s ease;
+	box-shadow: 0 0 20px rgba(0,0,0,.2);
+}
+.acd.shadow:hover {
+	-webkit-transition: box-shadow .218s ease,color .218s ease;
+	transition: box-shadow .218s ease,color .218s ease ;
+	box-shadow: 0 0 20px $blue-link !important;
+	color: $blue-link !important;
+}
+.acd.warning.shadow {
+	-webkit-animation-name: breathingLight; 
+	-webkit-animation-duration: 1.5s; 
+	-webkit-animation-iteration-count: infinite; 
+	box-shadow: 0 2px 5px $light-red;
+	border-color: $light-red;
+	border-width: 0px 0px 4px 0px;
+
+}
+.acd.warning.shadow:hover {
+	box-shadow: 0 2px 5px rgba(244,180,0,1) !important;
+	border-color: rgba(244,180,0,1);
+	border-width: 0px 0px 4px 0px;
+}
+
+@-webkit-keyframes 'breathingLight' { 
+	0% { 
+		box-shadow: 0 2px 5px $light-red;
+		border-color: $light-red;
+		border-width: 0px 0px 4px 0px;
+	} 
+	50% { 
+		box-shadow: 0 2px 5px $light-red; 
+		border-color: $light-red;
+		border-width: 0px 0px 4px 0px;
+	} 
+	62.5% { 
+		box-shadow: 0 2px 5px rgba(244,180,0,1); 
+		border-color: rgba(244,180,0,1);
+		border-width: 0px 0px 4px 0px;
+	}
+	75% { 
+		box-shadow: 0 2px 5px $light-red; 
+		border-color: $light-red;
+		border-width: 0px 0px 4px 0px;
+	} 
+	87.5% { 
+		box-shadow: 0 2px 5px rgba(244,180,0,1); 
+		border-color: rgba(244,180,0,1);
+		border-width: 0px 0px 4px 0px;
+	} 
+	100% {
+	 	box-shadow: 0 2px 5px $light-red; 
+	 	border-color: $light-red;
+	 	border-width: 0px 0px 4px 0px;
+	} 
+}

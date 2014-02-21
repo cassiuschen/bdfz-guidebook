@@ -1,71 +1,70 @@
-.header.container id="article_show_page"
-  .show.article.ui.celled.grid
-    .row
-      .one.wide.column
-        b 标题
-      .seven.wide.column
-        = @article.title
-      .two.wide.column
-        b 创建于：
-      = timeago(@article.public_at, :class => "two wide column")
-      .two.wide.column
-        b 最后更新：
-      = timeago(@article.updated_at, :class => "two wide column")
-    .row
-      .twelve.wide.column
-        .article.content
-          == $markdown.render(@article.content)
-      .four.wide.column
-        .ui.vertical.text.menu 
-          .header.item 文档操作
-          a.active.item
-            i.home.icon
-            | 查看文档
-          = link_to edit_article_path(@article), :class => "item"
-            i.edit.icon
-            | 编辑文档
-          = link_to @article, data: {:confirm => 'Are you sure?'}, :method => :delete, :class => "item"
-            i.remove.icon
-            | 删除文档
-          = link_to articles_path, :class => "item"
-            i.reorder.icon
-            | 返回文档列表
-    .row
-      .sixteen.wide.column
-        .ui.header
-          i.icon.inverted.circular.blue.comment
-          | 问题
-        .ui.selection.list
-          - @article.questions.each do |question|
-            .item
-              = image_tag "demo/avatar.jpg", :class => "ui avatar image"
-              .content
-                .header 
-                  | 1432101     
-                  = span_timeago(question.created_at, :class => "date")
-                = question.title
-    .row
-      .sixteen.wide.column
-        .ui.ignored.info.message
-          | 你可以在这里写下你针对#{@article.title}的问题或建议，以供学校对此进行说明或整改。
-        = form_for([@article, @article.questions.build], html: {class: "ui form segment", id: "question"}) do |f|
-          .ui.inverted.dimmer.visible.active
-            .content
-              .center
-                .ui.icon.header
-                  | 功能尚未开放 
-                  .sub.header
-                    | 请期待后续更新
-          .ui.error.message
-            .header#notice = notice
-          .field
-            label 标题：
-            = f.text_field :title
-          .field
-            label 详细描述：
-            = f.text_area :content
-          = f.submit '发布问题', :class => "ui blue question submit button"
-  br /
-  = render 'footer'
-javascript:
-  $(".timeago").timeago();
+.container
+  .row
+    .col-md-10
+      .acd.page
+        .acd.main.content
+          .header
+            .labels
+              a.text 浏览:
+              = @article.title
+          .body
+            .title
+              .content#explore
+                header.acd
+                  h3.title#e-title
+                    a.title = @article.title
+                  span.sub.title#e-subtitle
+                    span.subject 
+                    | 发布于： #{span_timeago(@article.public_at)}
+                    | &nbsp;-&nbsp;最后更新于： #{span_timeago(@article.updated_at)}
+              .acd.tip
+                .items
+                  .acd.item
+                    span.acd.tip-holder
+                    a.acd.tip-content.shadow 
+                      | #
+                      = @article.order
+            .acd.article
+              .description
+                .text
+                  .content
+                    == $markdown.render(@article.content)
+
+    .col-md-5.col-md-offset-1
+      .acd.page
+        .acd.comments.main.content
+          .body
+            .acd.article-info-header
+              .acd.title 操作面板
+            .acd.article
+              .description
+                .text
+                  .content
+                    = link_to edit_article_path(@article), :class => ""
+                      span.glyphicon.glyphicon-wrench
+                      |   编辑文档
+                    br/
+                    = link_to @article, data: {:confirm => '你确定?'}, :method => :delete, :class => ""
+                      span.glyphicon.glyphicon-remove
+                      |   删除文档
+                    br/
+                    = link_to articles_path, :class => ""
+                      span.glyphicon.glyphicon-circle-arrow-left
+                      |   返回文档列表
+            .acd.article-info-header
+              .acd.title 问题
+              .acd.subtitle 对于这篇文档，有哪些疑问？
+            .many.comments   
+              .haha.this.is.the.main.things
+                .here.we.go
+                  .things.go.here
+                     - @article.questions.each do |question|
+                        .media
+                          a.pull-left
+                            = image_tag('avatar_blank.png')
+                          .media.body
+                            h5.media.heading = question.author_id
+                            = question.content
+              = form_for([@article, @article.questions.build], html: {class: "say something", style: "background-color: #eee;padding-top: 15px;"}) do |f|
+                = f.text_area :content, :class => "acd"
+                = f.submit '发布', :class => "acd small green btn"

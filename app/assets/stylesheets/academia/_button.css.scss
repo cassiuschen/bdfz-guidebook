@@ -1,0 +1,124 @@
+///////////////////////////////////////////////////////////////////
+/*==================================*/
+/*            Button               */
+/*   Author:     Cassius Chen    */
+/*   Time:               2014.2    */
+/*==================================*/
+///////////////////////////////////////////////////////////////////
+.acd.btn {
+	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,.05);
+	box-shadow: 0 1px 0 rgba(0,0,0,.05);
+	-webkit-transition: background-color .218s,border-color .218s,box-shadow .218s;
+	transition: background-color .218s,border-color .218s,box-shadow .218s;
+	-webkit-user-select: none;
+	cursor: pointer;
+	float: left;
+	outline: none;
+	display:-moz-inline-box;
+	font-weight: bold;
+	text-align: center;
+	white-space: nowrap;
+
+}
+
+//  Button Size --------------------------------
+.acd.btn.small {
+	@include acd-btn-size(28px,28px,8px,0,10px,0,10px);
+	font-size: 12px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	min-width: 54px;
+}
+.acd.btn.base {
+	@include acd-btn-size(36px,36px,8px,0px,20px,0px,20px);
+	font-size: 14px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	min-width: 54px;
+}
+.acd.btn.big {
+	@include acd-btn-size(42px,normal,8px,4px,12px,4px,12px);
+	margin-right: 16px;
+	font-size: 14px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	min-width: 54px;
+}
+
+//  Button Color -------------------------------
+//////  |- White  -------------------------------
+.acd.btn.white {
+	@include acd-btn-color($white,$tiny-gray);
+	border:none !important;
+}
+.acd.btn.white:hover {
+	-webkit-box-shadow:0 1px 0 rgba(0,0,0,.1);
+	box-shadow:0 1px 0 rgba(0,0,0,.1);
+	border-color:$light-gray;
+}
+.acd.btn.white:active {
+	-webkit-box-shadow:inset 0 1px 0 #ddd;
+	box-shadow:inset 0 1px 0 #ddd;
+	@include acd-btn-color($gray,$light-gray);
+	opacity:1;
+}
+//////  |- Green  -------------------------------
+.acd.btn.green {
+	@include acd-btn-color($green,$heavy-green);
+	color: $white !important;
+	box-shadow:inset 0 -1px 0 $heavy-green;
+	border:1px solid transparent;
+	border-bottom:1px solid $heavy-green;
+}
+.acd.btn.green:hover {
+	-webkit-box-shadow:none;
+	box-shadow:none;
+	background-color: $light-green;
+	border-color:$light-green;
+}
+.acd.btn.green:active {
+	-webkit-box-shadow:inset 0 1px 0 $deep-green;
+	box-shadow:inset 0 1px 0 $deep-green;
+	@include acd-btn-color($dark-green,transparent);
+	border-top:1px solid $deep-green;
+}
+//////  |- Red    -------------------------------
+.acd.btn.red {
+	@include acd-btn-color($red,$heavy-red);
+	color: $white !important;
+	box-shadow:inset 0 -1px 0 $heavy-red;
+	border:1px solid transparent;
+	border-bottom:1px solid $heavy-red;
+}
+.acd.btn.red:hover {
+	-webkit-box-shadow:none;
+	box-shadow:none;
+	background-color: $light-red;
+	border-color:$light-red;
+}
+.acd.btn.red:active {
+	-webkit-box-shadow:inset 0 1px 0 $deep-red;
+	box-shadow:inset 0 2px 0 $deep-red;
+	@include acd-btn-color($dark-red,transparent);
+	border-top:1px solid $deep-red;
+}
+//////  |- Blue   -------------------------------
+.acd.btn.blue {
+	@include acd-btn-color($blue,$heavy-blue);
+	color: $white !important;
+	box-shadow:inset 0 -1px 0 $heavy-blue;
+	border:1px solid transparent;
+	border-bottom:1px solid $heavy-blue;
+}
+.acd.btn.blue:hover {
+	-webkit-box-shadow:none;
+	box-shadow:none;
+	background-color: $light-blue;
+	border-color:$light-blue;
+}
+.acd.btn.blue:active {
+	-webkit-box-shadow:inset 0 1px 0 $deep-blue;
+	box-shadow:inset 0 2px 0 $deep-blue;
+	@include acd-btn-color($heavy-blue,$heavy-blue);
+	border-top:1px solid $deep-blue;
+}

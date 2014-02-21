@@ -10,70 +10,63 @@
 # Read Sprockets README (https:#github.com/sstephenson/sprockets#sprockets-directives) for details
 # about supported directives.
 #
-# require jquery
+#= require jquery
+#= require jquery.turbolinks
 #= require jquery_ujs
 #= require turbolinks
+#= require bootstrap
 #= require nprogress
 #= require nprogress-turbolinks
-#= require semantic-ui
 #= require timeago
 # require_tree .
-NProgress.configure
-  showSpinner: true
-  ease: 'ease'
-  speed: 500
 
-loader_remove = ->
-	$("#loader").removeClass "active"
-	return
+window.App =
+	Affix : () ->
+	    $window = $('window')
+	    $body = $('body')
+	    navHeight = $('.navbar').outerHeight(true) + 10
+	    
+	    $window.on "load", ->
+	        $body.scrollspy 'refresh'
+	        return	
 
-loader_add = ->
-	$("#loader").addClass "active"
-	return
+	    $('body [href=#]').click (e) ->
+	        e.preventDefault()	
 
-$(document).on 'page:fetch', ->
-  NProgress.start()
-  $(".timeago").timeago()
-#  loader_add()
-  return
+	    setTimeout ->
+	        $sideBar = $('.onspy')	
 
-$(document).on 'page:restore', ->
-  NProgress.remove()
-  $(".timeago").timeago()
-#  loader_remove()
-  return
-$(document).on 'page:fetchstarting', ->
-  NProgress.start()
-  $(".timeago").timeago()
-  loader_add()
-  return
+	        $sideBar.affix(
+	            offset : 
+	                top : () ->
+	                		offsetTop = $sideBar.offset().top
+	                		sideBarMargin  = parseInt $sideBar.children(0).css('margin-top'),10
+	                		navOuterHeight = $('nav.navbar').height()
+	                		return this.top = offsetTop - navOuterHeight - sideBarMargin	
 
-$(document).on 'page:loadfetched', ->
-  NProgress.done()
-  loader_remove()
-  $(".timeago").timeago()
-  return
+	                	bottom : () ->
+	                		return this.bottom = $('footer').outerHeight true
+	        )
+	        return
+	    ,100
+	    return
 
-$(document).on 'page:restorefetched', ->
-  NProgress.done()
-  loader_remove()
-  $(".timeago").timeago()
-  return
-
-$(document).on 'page:changepage', ->
-  NProgress.done()
-  loader_remove()
-  $(".timeago").timeago()
-  return
+	Init : () ->
+		App.Affix()
+		$originWidth = $('#affix-bar').width()
+		$('.affix-top').css "width",$originWidth
+		$('.affix').css "width",$originWidth
+		$('.affix-bottom').css "width",$originWidth
+		$(".timeago").timeago()
 
 $(document).ready ->
-  NProgress.done()
-#  loader_remove()
-  return
-
-
-$(document).ready ->
+	App.Init()
 	$(".timeago").timeago()
 
-$(document).load ->
+$ ->
+	if $.turbo.isReady == true
+		App.Init()
+
+$(document).on 'click', 'button', () ->
+	App.Init
 	$(".timeago").timeago()

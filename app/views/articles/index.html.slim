@@ -1,29 +1,28 @@
-.segment
-  .header.container
-    .pageheader
-      h1.ui.dividing.header 文档列表
-      p
-        | 选择你想要查看或编辑的文档，发布问题、回答问题。
-    a.ui.basic.labeled.icon.toggle.overview.button href="/explore"
-      | 浏览文档汇总
-      i.book.icon
-.body.container style="padding-top: 20px;"
-  .ui.items
-    - @articles.each do |article|
-      = link_to article, :class => "article item"
-        .content
-          = timeago(article.last_edit_at, :class =>"meta")
-          .name 
-            | #{article.order}
-          p.description = article.title
-            = link_to '编辑', edit_article_path(article)
-       
-
-    = link_to new_article_path, :class => 'article item'
-      .center.content
-        i.add.huge.black.link.icon
-
-  = render 'footer'
-
-javascript:
-  $(".timeago").timeago();
+.col-md-10.col-md-offset-3
+  .acd.page
+    .acd.main.content
+      .body
+        .acd.article-info-header style="margin-bottom: 0; border-bottom: #ddd solid 1px;"
+          .acd.title 文档列表
+          .acd.subtitle
+            | 选择你想要查看或编辑的文档，发布问题、回答问题。
+        ul.acd.list.page.data-no-turbolink
+          - i = 0
+          - for article in @articles
+            li.acd.list.item
+              .number = article.order
+              .content 
+                .title
+                  = link_to article.title, article_path(id: article)
+                  - if Rails.env == 'development' || session[:admin] == true
+                    | &ensp;&ensp;
+                    = link_to '(编辑', edit_article_path(article)
+                    | &ensp;/&ensp;
+                    = link_to '删除)', article, data: {:confirm => '你确定么？'}, :method => :delete
+                .sub-title
+                  = truncate(strip_tags(article.content), length: 60)
+          li.acd.list.item
+            .number +
+            .content
+              .title 
+                = link_to "新建文档", new_article_path

@@ -1,48 +1,83 @@
-//
-// This is a manifest file that'll be compiled into application.css, which will include all the files
-// listed below.
-//
-// Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
-// or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
-//
-// You're free to add application-wide styles to this file and they'll appear at the bottom of the
-// compiled file so the styles you add here take precedence over styles defined in any styles
-// defined in the other CSS/SCSS files in this directory. It is generally better to create a new
-// file per style scope.
-//
-//= require_tree .
-//= require_self
-//
-@import "semantic-ui";
-$nprogress-color: #f1f1f1;
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ * require_tree .
+ *= require_self
+ */
+
+@import 'variables';
+//Bootstrap Theme
+$font-family-sans-serif: arial,sans-serif;
+$text-color: #262626;
+$link-color: $blue-link;
+$grid-columns: 16;
+$grid-gutter-width: 0px;
+$font-size-base: 14px;
+$grid-float-breakpoint: 440px;
+@import 'bootstrap';
+
+// Academia Custom Styles
+@import 'academia.css.scss';
+
+$nprogress-color: lighten($blue-link,15%);
 @import 'nprogress';
 @import 'nprogress-bootstrap';
 
-.footer.link.list {
-	display: block;
-	color: #fff;
-	text-align: center;
-	margin-bottom: 1.5rem;
+body {
+	-webkit-font-smoothing: antialiased !important;
+	font-family: roboto,arial,sans-serif !important;
+  padding-top: 60px;
+  background-color: rgb(229, 229, 229);
+}
+a:hover{ text-decoration: none !important; }
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/fonts/roboto.woff) format('woff');
 }
 
-.transparent.menu { opacity: 0.95 }
-.container {
-	width: auto;
-	padding: 0% 8%;
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url(/fonts/roboto700.woff) format('woff');
 }
-.body.container { padding-top: 20px; }
-.header.container { 
-	padding-top: 80px;
-	padding-bottom: 20px;
-	background-color: white;
-	padding-left: 15%;
-	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: url(/fonts/rotobo300.woff) format('woff');
 }
-body {
-	margin: 0px !important;
-	padding: 0px !important;
+.content {
+  img { width: 100%; }
 }
-a:link{text-decoration:none }
-a:visited {text-decoration:none}
-a:hover {text-decoration:none;}
-a:active {text-decoration:none} 
+#explore {
+  margin-left: 0px !important;
+}
+#e-title,
+#e-subtitle {
+  padding-left: 0 !important;
+}
+
+input {
+  border: #eee solid 1px !important;
+  margin-left: 15px;
+  width: 40em;
+}
+
+input.acd.btn {
+  width: 600px;
+  position: relative;
+  left: 50%;
+  margin-left: -300px;
+}

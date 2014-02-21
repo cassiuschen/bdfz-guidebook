@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+Article.destroy_all
 a1 = Article.create(
 		order: 0,
 		title: "高中学生行为指引",
@@ -19,8 +19,8 @@ a1 = Article.create(
 
 绿色通道是引导，红色禁区是底线，在这之间，学生自主选择、自我规划，行为自律。自律，指在没有人现场监督的情况下，通过自己要求自己，变被动为主动，自觉地遵循制度，拿它来约束自己的一言一行。自律并不是让一大堆规章制度来层层地束缚自己，而是用自律的行动创造一种井然的秩序来为我们的学习生活争取更大的自由。
 
-<div class="ui green message">
-    <div class="header">绿色通道</div><div class="list">
+<div class="callout-success callout">
+    <h4>绿色通道</h4><div class="list">
                 <li>规划自我：用好学生手册，参与单元事务，多与导师、家长沟通交流，做好选择、反思和小结</li>
                 <li>尊重他人：善于理解别人的想法和需求，愿意与他人合作和分享，尽力多给予别人关心和帮助 </li>
                 <li>勇于实践：培养行胜于言、坚持不懈、专心投入、认真仔细的态度，勇于探索尝试、克服困难</li>
@@ -28,8 +28,8 @@ a1 = Article.create(
     </div>
 </div>
 
-<div class="ui warning message">
-        <div class="header">黄色警戒</div>
+<div class="callout-warning callout">
+        <h4>黄色警戒</h4>
             <div class="list">
                 <li>遵守纪律：课堂上听从教师管理，课余在校园公共场所举止得体、不吵闹冲撞，听从别人劝导</li>
                 <li>遵守规定：按时提交各种信息资料的规定，及时交纳各种费用的规定，认真履行各种协议规定</li>
@@ -37,12 +37,12 @@ a1 = Article.create(
         
 </div>
 
-<div class="ui small info message">
-  <i class="icon info"></i>违反将被追究并实施限权处理及警告、严重警告、记过处分
+<div class="alert alert-info">
+  <span class="glyphicon glyphicon-info-sign"></span>违反将被追究并实施限权处理及警告、严重警告、记过处分
 </div>
 
-<div class="ui error message">
-        <div class="header">红色禁区</div>
+<div class="callout-danger callout">
+        <h4>红色禁区</h4>
              <div class="list">
                 <li>严禁：考试作弊，证明作假，学业成果及作品抄袭，造谣说谎诽谤诬蔑、损害他人和学校名誉</li>
                 <li>严禁：打架骂人、对别人造成伤害，偷窃、侵占他人财物，破坏学校公共设施，浪费公共资源</li>
@@ -50,8 +50,8 @@ a1 = Article.create(
         </div>
 </div>
 
-<div class="ui small info message">
-  <i class="icon info"></i>举报投诉一经查实，给予留校察看、开除学籍处分
+<div class="alert alert-info">
+  <span class="glyphicon glyphicon-info-sign"></span>举报投诉一经查实，给予留校察看、开除学籍处分
 </div>',
 		public_at: "2013-09-01 00:00:00 +08:00",
 		last_edit_at: Time.now
@@ -158,7 +158,7 @@ a3 = Article.create(
 a4 = Article.create(
 		order: 3,
 		title: "请假制度",
-		content: '<div class="ui purple segment">
+		content:'<div class="ui purple segment">
 <h4>请假制度</h4>
 <img alt="出入校门流程" src="/images/contain/1-3-1.jpg" >
 <li>学生病假：复课当天向考勤员提交医院证明或学校医务室证明。未能提交医务证明，由家长电话或书面请假的病假按事假处理。</li>
@@ -166,14 +166,14 @@ a4 = Article.create(
 <li>学生公假：经学院或中心批准，如代表学校参加学科竞赛、文体活动、出访和接待。</li>
 </div>
 
-<div class="ui purple segment">
+<div class="purple segment">
 <h4>考勤制度</h4>
 <p>每节课由任课老师在上课15分钟内在龙创系统登记学生出勤情况。迟到、早退超过10分钟按旷课处理。</p>
 
 <p>学校各种集会、书院议事会由书院长统计考勤，在开始前5分钟报会议主持人，在校内系统登记。</p>
 </div>
 
-<div class="ui purple segment"><h4>责任追究</h4>
+<div class="purple segment"><h4>责任追究</h4>
 <p>每学段累积迟到、早退、滞留校园3次给予警告处分，迟到、早退3次记为旷课1次，旷课1次给予警告处分。病假扣除模块成绩0.5分/课时。事假扣除模块成绩1分/课时。未获批准事假或旷课，扣除模块成绩2分/课时。超出时限事后补假无效，按旷课处理。</p>
 </div>',
 		public_at: "2013-09-01 00:00:00 +08:00",
@@ -230,7 +230,7 @@ a6 = Article.create(
 
 a7 = Article.create(
 		order: 6,
-		title: "学生宿舍住宿管理制度",
+		title: "北大附中部门结构图",
 		content: '![结构图](/images/contain/c2.jpg)',
 		public_at: "2013-09-01 00:00:00 +08:00",
 		last_edit_at: Time.now
@@ -260,12 +260,11 @@ a9 = Article.create(
 
 1. 校园网网络身份标识（NetID）
   - 1.1 北大附中成员是指在人事处注册的各类教职工、在校注册学生
-
-   NetID是校园网网络身份标识的简称，相当于网络“身份证”，它是我校师生在校园网网络上的身份标识，可以用于电子邮件服务、门户服务、数字化学习、管理信息系统和办公自动化系统等的身份认证。我校成员均可免费获得一个NetID，NetID所有权属于学校，使用者离开北京大学附属中学时，NetID将被收回，与NetID捆绑的所有服务及所占用的资源也同时收回。
-
+   
+         NetID是校园网网络身份标识的简称，相当于网络“身份证”，它是我校师生在校园网网络上的身份标识，可以用于电子邮件服务、门户服务、数字化学习、管理信息系统和办公自动化系统等的身份认证。我校成员均可免费获得一个NetID，NetID所有权属于学校，使用者离开北京大学附属中学时，NetID将被收回，与NetID捆绑的所有服务及所占用的资源也同时收回。
   - 1.2 来访者
 
-   相关部门提交申请，经校园信息化管理办公室批准，由技术部门负责发放固定期限上网账号。
+        相关部门提交申请，经校园信息化管理办公室批准，由技术部门负责发放固定期限上网账号。
 
 2. 使用规定
   - 2.1 禁止在校园网内利用各类渠道包括邮箱传播有淫秽、暴力等不妥内容的文章、图像、声频、视频等信息，一经查实，学生依红色禁区处理，教师停职处理。
@@ -291,7 +290,7 @@ a10 = Article.create(
 		title: "关于校园内张贴宣传物品及通知的规定",
 		content: %{  为了安全及防止对墙体产生不可逆转的损坏，以下：
   
-<div class="ui info message">
+<div class="callout-info callout">
    <div class="list">
                 <li>所有的天花及屋顶均不得张贴任何宣传物品及通知。</li>
                 <li>所有的公共楼道的地板均不得张贴任何宣传物品及通知。</li>
@@ -303,7 +302,7 @@ a10 = Article.create(
 
 为了支持大家的活动宣传及通知，以下：
 
-<div class="ui warning message">
+<div class="callout-warning callout">
             <div class="list">
                 <li>可以在玻璃隔断上张贴宣传物品及通知，书院活动室外的玻璃割断需征得该书院的同意。</li>
                 <li>可以在软木版上张贴宣传物品及通知。</li>
@@ -314,7 +313,7 @@ a10 = Article.create(
 
 对于内容的限制：
 
-<div class="ui info message">
+<div class="callout-info callout">
              <div class="list">
                 <li>不得张贴任何盈利及培训机构的宣传品。</li>
                 <li>不得张贴任何带有色情、暴力、诽谤等恶意行为的宣传品。</li>
@@ -455,7 +454,7 @@ a14 = Article.create(
 a15 = Article.create(
 		order: 14,
 		title: "各部门联系人",
-		content: %{<table class="ui table segment">
+		content:%{<table class="table table-hover">
         <thead>
           <tr>
             <th>#</th>
@@ -547,7 +546,7 @@ a15 = Article.create(
          
         </tbody>
       </table>
-<table class="ui table segment">
+<table clasui table segment">
         <thead>
           <tr>
             
@@ -618,7 +617,7 @@ a15 = Article.create(
          
         </tbody>
       </table>
-<table class="ui table segment">
+<table class= table segment">
           <thead>
           <tr>
             
@@ -799,7 +798,7 @@ a20 = Article.create(
 a21 = Article.create(
 		order: 20,
 		title: "各书院集会地点",
-		content: %{<table class="ui table segment">
+		content:%{<table class="table table-hover">
         <thead>
           <tr>
             <th>#</th>

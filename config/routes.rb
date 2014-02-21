@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
+  get '/explore' => "explore#index"
   get "home/index"
   root 'home#index'
 
   get "articles/explore"
-  get '/explore' => 'articles#explore'
 
   resources :articles do
     resources :questions do
       resources :comments
     end
   end 
+
+  get 'logout', to: 'application#logout', as: :logout
 
 
   # The priority is based upon order of creation: first created -> highest priority.
