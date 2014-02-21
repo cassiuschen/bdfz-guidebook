@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140103050508) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "articles", force: true do |t|
     t.integer  "order",                    null: false
     t.string   "title",                    null: false
@@ -33,7 +36,7 @@ ActiveRecord::Schema.define(version: 20140103050508) do
     t.datetime "updated_at"
   end
 
-  add_index "comments", ["question_id"], name: "index_comments_on_question_id"
+  add_index "comments", ["question_id"], name: "index_comments_on_question_id", using: :btree
 
   create_table "questions", force: true do |t|
     t.string   "title",                           null: false
@@ -47,6 +50,6 @@ ActiveRecord::Schema.define(version: 20140103050508) do
     t.datetime "updated_at"
   end
 
-  add_index "questions", ["article_id"], name: "index_questions_on_article_id"
+  add_index "questions", ["article_id"], name: "index_questions_on_article_id", using: :btree
 
 end
