@@ -14,13 +14,15 @@
               .content 
                 .title
                   = link_to article.title, article_path(id: article)
-                  - if Rails.env == 'development'
+                  - if Rails.env == 'development' || session[:admin] == true
                     | &ensp;&ensp;
                     = link_to '(编辑', edit_article_path(article)
                     | &ensp;/&ensp;
                     = link_to '删除)', article, data: {:confirm => '你确定么？'}, :method => :delete
                 .sub-title
                   = truncate(strip_tags(article.content), length: 60)
-
-javascript:
-  $(".timeago").timeago();
+          li.acd.list.item
+            .number +
+            .content
+              .title 
+                = link_to "新建文档", new_article_path

@@ -15,10 +15,8 @@
                     a.title = @article.title
                   span.sub.title#e-subtitle
                     span.subject 
-                    | 发布于：
-                    = @article.public_at
-                    | &nbsp;-&nbsp;最后更新于： 
-                    span.timeago = @article.updated_at
+                    | 发布于： #{span_timeago(@article.public_at)}
+                    | &nbsp;-&nbsp;最后更新于： #{span_timeago(@article.updated_at)}
               .acd.tip
                 .items
                   .acd.item
@@ -70,6 +68,3 @@
               = form_for([@article, @article.questions.build], html: {class: "say something", style: "background-color: #eee;padding-top: 15px;"}) do |f|
                 = f.text_area :content, :class => "acd"
                 = f.submit '发布', :class => "acd small green btn"
-
-javascript:
-  $(".timeago").timeago();

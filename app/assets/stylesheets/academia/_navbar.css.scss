@@ -107,3 +107,14 @@ nav.acd {
 	}
 	.navbar-right { margin-right: 5% !important;}
 }
+@media only screen and ( max-width: 680px ) {
+	.acd#mobile-menu {
+		ul.nav {
+			li {
+				margin-left: 0 !important;
+				margin-right: 15px !important;
+			}
+		}
+	}
+}
+

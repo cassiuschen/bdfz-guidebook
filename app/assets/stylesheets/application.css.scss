@@ -22,6 +22,7 @@ $link-color: $blue-link;
 $grid-columns: 16;
 $grid-gutter-width: 0px;
 $font-size-base: 14px;
+$grid-float-breakpoint: 440px;
 @import 'bootstrap';
 
 // Academia Custom Styles
@@ -66,4 +67,17 @@ a:hover{ text-decoration: none !important; }
 #e-title,
 #e-subtitle {
   padding-left: 0 !important;
+}
+
+input {
+  border: #eee solid 1px !important;
+  margin-left: 15px;
+  width: 40em;
+}
+
+input.acd.btn {
+  width: 600px;
+  position: relative;
+  left: 50%;
+  margin-left: -300px;
 }
