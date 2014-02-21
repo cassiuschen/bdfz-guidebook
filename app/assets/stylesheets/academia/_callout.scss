@@ -1,0 +1,50 @@
+/*
+ * Callouts
+ */
+/* Common styles for all types */
+.callout {
+  margin: 20px 0;
+  padding: 20px;
+  border-left: 3px solid #eee;
+}
+.callout h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
+/* Variations */
+.callout-danger {
+  background-color: lighten($light-red,30%);
+  border-color: $light-red;
+  color: lighten($red,10%)
+}
+.callout-danger h4 {
+  color: $red;
+}
+.callout-warning {
+  background-color: lighten($yellow,45%);
+  border-color: lighten($yellow,15%);
+  color: darken($yellow,10%)
+}
+.callout-warning h4 {
+  color: $yellow;
+}
+.callout-info {
+  background-color: lighten($tiny-blue,30%);
+  border-color: $light-blue;
+  color: darken($blue,10%)
+}
+.callout-info h4 {
+  color: darken($blue,15%);
+}
+.callout-success {
+  background-color: lighten($tiny-green,30%);
+  border-color: $tiny-green;
+  color: lighten($green,10%)
+}
+.callout-success h4 {
+  color: $green;
+}

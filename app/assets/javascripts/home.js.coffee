@@ -1,105 +1,55 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
-
-$(document).ready ->
-	$("#login_click").click ->
-		$("#login").sidebar(
-			overlay: true
-			).sidebar('toggle')
-		return
-	$("#login_close").click ->
-		$("#login").sidebar(
-			overlay: true
-			).sidebar('toggle')
-		return
-	$bg = $("#bg")
-	bw = $bg.width()
-	bh = $bg.height()
-	use_height = ->
-#		bh = $bg.height()
-#		bw = $bg.width()
-#		pl = ( ww - bw ) / -2
-#		$bg.css(
-#			top: "auto"
-#			height: "100%"
-#			width: "auto"
-#			left: "auto"
-#			position: "fixed"
-#			right: "auto"
-#			bottom: "auto"
-#			)
+window.Home =
+	use_height : () ->
+		$bg = $("#bg")
 		$bg.removeClass "use_width"
 		$bg.addClass "use_height"
 		return
-	use_width = ->
-#		bh = $bg.height()	
-#		bw = $bg.width()
-#		pt = ( wh - bh ) / 2
-#		$bg.css(
-#			top: "auto"
-#			height: "auto"
-#			width: "100%"
-#			left: "auto"
-#			position: "fixed"
-#			right: "auto"
-#			bottom: "auto"
-#			)
+	use_width : () ->
+		$bg = $("#bg")
 		$bg.removeClass "use_height"
 		$bg.addClass "use_width"
 		return
-	resizeImg = ->
+	resizeImg : () ->
+		$bg = $("#bg")
+		bw = $bg.width()
+		bh = $bg.height()
 		$w = $(window)
 		wh = $w.height()
 		ww = $w.width()
 		wp = 10000 * wh / ww
 		bp = 10000 * bh / bw 
-		#resizeImg(bh,bw)
 		switch
-			when wp > bp then use_height()
-			when wp = bp then use_width()
-			when wp < bp then use_width()
+			when wp > bp then Home.use_height()
+			when wp = bp then Home.use_width()
+			when wp < bp then Home.use_width()
 		return
-	$bg.load ->
-		resizeImg()
-		return
+
+$("#bg").load ->
+	Home.resizeImg()
 	return
+return
 
 
-$bg = $("#bg")
-bw = $bg.width()
-bh = $bg.height()
-use_height = ->
-	$bg.removeClass "use_width"
-	$bg.addClass "use_height"
-	return
-use_width = ->
-	$bg.removeClass "use_height"
-	$bg.addClass "use_width"
-	return
-resizeImg = ->
-	$w = $(window)
-	wh = $w.height()
-	ww = $w.width()
-	wp = 10000 * wh / ww
-	bp = 10000 * bh / bw 
-	#resizeImg(bh,bw)
-	switch
-		when wp > bp then use_height()
-		when wp = bp then use_width()
-		when wp < bp then use_width()
-	return
+
+
+$(document).ready ->
+	Home.resizeImg()
+	alter
+
 window.addEventListener "resize", ->
-	resizeImg()
+	Home.resizeImg()
 	return
 $(document).on 'page:loadfetched', ->
-	resizeImg()
+	Home.resizeImg()
 
 $(document).on 'page:restorefetched', ->
- 	resizeImg()
+ 	Home.resizeImg()
  	return
 $(document).on 'page:changepage', ->
- 	resizeImg()
+ 	Home.resizeImg()
  	return
 
 	
@@ -114,7 +64,6 @@ $(document).on 'page:changepage', ->
 #			width: "100%"
 #			)
 #	set_login_height()
-	return
 
 #t = n = 0
 #$(document).ready ->

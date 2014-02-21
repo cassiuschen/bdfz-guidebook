@@ -1,17 +1,26 @@
-.ui.fixed.transparent.inverted.menu
-  .container
-    = link_to articles_path, :class => "title item"
-      b 学生手册
-      | : #{@title}
-    .right.menu
-      a.icon.development.item
-        i.warning.out.icon
-
-javascript:
-  $('.development.item')
-    .popup({
-      position : 'bottom left',
-      title    : '开发进行中...',
-      content  : '你现在所看到的是一个预览版的学生手册系统，部分功能暂不开放'
-    })
-  ;
+nav.navbar.navbar-default.navbar-fixed-top.acd.hidden-print role="navigation"
+  .navbar-header
+    button.navbar-toggle type="button" id="mobile-menu" href="/"
+      span.sr-only NavBar 
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    a.navbar-brand.acd.logo href=root_path
+  .acd.collapse.navbar-collapse#example-navbar
+    ul.nav.navbar-nav.main
+      li = link_to '首页', root_path
+      li class=('active' if controller_name == "explore")
+        = link_to '浏览全文', explore_path
+      li class=('active' if controller_name == "courses" && request.path != '/about')
+          a 11
+      li class=('active' if request.path == '/about')
+          a 关于
+/    ul.nav.navbar-nav.navbar-right
+/        - unless @current_user.nil?
+/          li
+/            a
+/              | 欢迎您,
+/              = @current_user.name
+/          li = link_to '登出', logout_path
+/        - else
+/          li = link_to "登陆", login_path

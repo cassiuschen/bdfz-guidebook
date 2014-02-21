@@ -1,65 +1,20 @@
-.ui.grid
-  .ten.wide.column
-    = form_for @article, html: {class: "ui form segment"} do |f|
-      - if @article.errors.any?
-        .ui.error.message id="error_explanation"
-          header = "提交的文档存在以下#{pluralize(@article.errors.count, "error")}个错误："
-          ul.list
-            - @article.errors.full_messages.each do |message|
-              li = message
-      .ui.two.fields
-        .field
-          label 文档序号
-          = f.number_field :order
-        .field
-          label 文档标题
-          = f.text_field :title
-      .field
-        label 文档内容
-        = f.text_area :content
-      = f.submit '保存', :class => " ui blue submit button"
-  .six.wide.column
-    .ui.piled.feed.segment
-      .ui.header
-        | 写作说明
-      .event
-        .label
-          i.circular.pencil.icon
-        .content
-          .date
-            | Markdown
-          .summary
-            | 如何写作标题
-          .extra.text
-            | 文章内容中的标题用`###`开头并在#后填写你想要的内容，二级标题用`####`开头，以此类推。
-      .event
-        .label
-          i.circular.pencil.icon
-        .content
-          .date
-            | Markdown  
-          .summary
-            | 如何换行
-          .extra.text
-            | 文章换行需要按动两次回车。
-      .event
-        .label
-          i.circular.pencil.icon
-        .content
-          .date
-            | Markdown
-          .summary
-            | 如何添加图片
-          .extra.text
-            | 使用形如`![结构图](/images/demo.jpg)`添加图片，方括号里是图片名称，圆括号里是图片地址。如果要把图片放在服务器上，请联系管理员。
-      .event
-        .label
-          i.circular.pencil.icon
-        .content
-          .date
-            | Markdown
-          .summary
-            | 如何分条论述
-          .extra.text
-            | 用`-`表示一条，并在短横后加空格开始写内容。两条之间换行不用换两行。
+= form_for @article, html: {role: "form"} do |f|
+  - if @article.errors.any?
+    .ui.error.message id="error_explanation"
+      header = "提交的文档存在以下#{pluralize(@article.errors.count, "error")}个错误："
+      ul.list
+        - @article.errors.full_messages.each do |message|
+          li = message
+  .form-group
+    label 文档序号
+    = f.number_field :order
+  .form-group
+    label 文档标题
+    = f.text_field :title
+  .form-group
+    label 文档内容
+    = f.text_area :content, :class => "form-control", rows: 13
+  = f.submit '保存', :class => "acd btn blue"
+  
+
 

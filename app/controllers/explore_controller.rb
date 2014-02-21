@@ -1,8 +1,5 @@
-class HomeController < ApplicationController
-  layout "blank"
+class ExploreController < ApplicationController
   def index
-    rand_seed = rand(100)
-    @rand_image = rand_seed % 4 + 1
     @raw_articles = Article.all
     @articles = @raw_articles.sort_by {|a| a.order}
     time = Array.new
@@ -11,5 +8,12 @@ class HomeController < ApplicationController
     end
     sort_time = time.sort!
     @last_edit = sort_time.last
+    t = @last_edit.to_s
+    p = /(....)-(..)-(..)/ 
+    p.match(t)
+    year = $1.to_i
+    month = $2.to_i
+    version = "#{year}年#{month}月修订版"
+    @title = version
   end
 end

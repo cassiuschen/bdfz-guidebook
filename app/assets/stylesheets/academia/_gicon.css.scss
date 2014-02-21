@@ -1,0 +1,105 @@
+
+///////////////////////////////////////////////////////////////////
+/*==================================*/
+/*            Icon                 */
+/*   Author:      Google Inc.    */
+/*   Time:               2014.2    */
+/*==================================*/
+///////////////////////////////////////////////////////////////////
+.acd.icon {
+	height:24px;
+	width:24px;
+	display:inline-block;
+}
+.acd.icon.small.camera {
+	background:no-repeat asset-url('g-icon.png') 0 -548px;
+	height:20px;
+	width:20px
+}
+.acd.icon.small.vedio {
+	background:no-repeat asset-url('g-icon.png') 0 -232px;
+	height:20px;
+	width:20px
+}
+.acd.icon.small.link {
+	background:no-repeat asset-url('g-icon.png') -13px -522px;
+	height:20px;
+	width:20px
+}
+.acd.icon.small.date {
+	background:no-repeat asset-url('g-icon.png') 0 -25px;
+	height:20px;
+	width:20px
+}
+.acd.icon.close {
+	filter:alpha(opacity=70);
+	opacity:.7;
+	background:no-repeat asset-url('g-icon.png') 0 -285px;
+	height:20px;
+	width:20px
+}
+.acd.icon.add.user {
+	filter:alpha(opacity=70);
+	opacity:.7;
+	-webkit-transform:scale(.7);
+	transform:scale(.7);
+	background:no-repeat asset-url('g-icon.png') 0 0;
+	cursor:pointer;
+	padding-right:1px
+}
+.acd.icon.inv.pencil {
+	background:no-repeat asset-url('g-icon.png') 0 -813px;
+}
+.acd.icon.inv.camera {
+	background:no-repeat asset-url('g-icon.png') 0 -569px;
+}
+.acd.icon.inv.link{
+	background:no-repeat asset-url('g-icon.png') 0 -416px;
+}
+.acd.icon.inv.vedio {
+	background:no-repeat asset-url('g-icon.png') 0 -636px;
+}
+.acd.icon.inv.date {
+	background:no-repeat asset-url('g-icon.png') 0 -749px
+}
+.acd.icon.date {
+	background:no-repeat asset-url('g-icon.png') 0 -749px;
+	float:left;
+	height:24px;
+	margin-right:10px;
+	width:24px
+}
+.acd.icon.small.mail {
+	background:no-repeat asset-url('g-icon.png') 0 -221px;
+	height:10px;
+	width:14px
+}
+.tm {
+	background:no-repeat asset-url('g-icon.png') -13px -719px;
+	width:7px;
+	height:4px;
+	cursor:pointer;
+	margin:6px 4px;
+}
+.tm:hover {
+	background-image:no-repeat asset-url('g-icon.png') -13px -719px
+}
+.acd.icon.mute.close {
+	background:no-repeat asset-url('g-icon.png') 0 -275px;
+	cursor:pointer;
+	height:9px;
+	margin-right:3px;
+	margin-top:3px;
+	width:9px
+}
+.acd.icon.left {
+	background:no-repeat asset-url('g-icon.png') -13px -719px;
+	height:4px;
+	margin:6px 4px;
+	width:7px
+}
+.acd.icon.right {
+	background:no-repeat asset-url('g-icon.png') -17px -324px;
+	height:16px;
+	width:16px
+}

@@ -1,10 +1,12 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_filter CASClient::Frameworks::Rails::Filter, :if_admin
 
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    articles = Article.all
+    @articles = articles.sort_by {|a| a.order }
     @title = "内容"
   end
 
