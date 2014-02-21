@@ -57,3 +57,14 @@ textarea.acd:focus {
 	border-width: 1px !important;
 	border-left-width: 7px !important;
 }
+
+.acd.login-btn {
+	position: fixed;
+	margin-left: 90%;
+	margin-top: 1%;
+	color: $white;
+	a {
+		color: $white !important;
+		border: $white solid 1px;
+	}
+  }

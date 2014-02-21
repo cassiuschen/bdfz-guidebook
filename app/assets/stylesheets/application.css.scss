@@ -27,7 +27,7 @@ $font-size-base: 14px;
 // Academia Custom Styles
 @import 'academia.css.scss';
 
-$nprogress-color: lighten($blue-link,30%);
+$nprogress-color: lighten($blue-link,15%);
 @import 'nprogress';
 @import 'nprogress-bootstrap';
 

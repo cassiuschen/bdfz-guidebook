@@ -10,6 +10,12 @@ div id="bg-img-#{@rand_image}"
     = link_to explore_path, class: "explore"
       .index-btn
         | 浏览手册内容
+
+.acd.login-btn
+  - if session[:cas_user]
+    = link_to "#{session[:cas_user]}登出", logout_path, :class => "acd small btn"
+  - else
+    = link_to "管理员登陆", articles_path, :class => "acd small btn"
 /.ui.page.dimmer.visible.active
 /  .content
 /    .center
