@@ -1,21 +1,18 @@
 Rails.application.routes.draw do
+  resources :books do
+    resources :articles do
+      resources :questions do
+        resources :comments
+      end
+    end
+  end
+  # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
   get '/explore' => "explore#index"
   get "home/index"
   root 'home#index'
 
-  get "articles/explore"
-
-  resources :articles do
-    resources :questions do
-      resources :comments
-    end
-  end 
-
-  get 'logout', to: 'application#logout', as: :logout
-
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  #get "articles/explore"
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

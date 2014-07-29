@@ -1,75 +1,55 @@
-source 'http://ruby.taobao.org'
+source 'https://ruby.taobao.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.2'
-
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'rails', '4.1.4'
+# Use postgresql as the database for Active Record
 gem 'pg'
-gem 'slim'
+# Use Slim
 gem 'slim-rails'
-
 # Use SCSS for stylesheets
-gem 'sass-rails'
-gem 'nprogress-rails'
-gem 'bootstrap-sass'
-
+gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-gem 'markdown'
-gem 'redcarpet'
-gem 'less'
-
-gem 'rack-mini-profiler'
-
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer',  platforms: :ruby
+# gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 gem 'jquery-turbolinks'
-
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
-
+gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc',          group: :doc, require: false
+gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/jonleighton/spring
+# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+# Front End
+gem 'nprogress-rails'
+gem 'bootstrap-sass'
+gem 'markdown'
+gem 'redcarpet'
+
+# Speedy
+gem 'rack-mini-profiler'
+
+gem 'puma'
+gem 'devise'
+
 # Use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.1.2'
+# gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'
-gem 'puma'
-
-# Login Server
-gem 'omniauth'
-gem 'omniauth-openid'
-gem 'openid-redis-store'
-gem 'omniauth-cas'
-gem 'hiredis'
-gem 'redis', :require => ["redis", "redis/connection/hiredis"]
-gem 'active_model_serializers'
-gem 'html_truncator'
-
-# CAS Server
-gem 'rubycas-client'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-#gem 'debugger', group: [:development, :test]
-gem 'better_errors', group: [:development, :test]
-gem "binding_of_caller", group: [:development, :test]
+# gem 'debugger', group: [:development, :test]
 

@@ -12,6 +12,6 @@ div id="bg-img-#{@rand_image}"
 
 .acd.login-btn
   - if session[:cas_user]
-    = link_to "#{session[:cas_user]}登出", logout_path, :class => "acd small btn"
+   / = link_to "#{session[:cas_user]}登出", logout_path, :class => "acd small btn"
   - else
-    = link_to "登陆", articles_path, :class => "acd small btn"
+    = link_to "登陆", explore_path, :class => "acd small btn"

@@ -6,7 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Article.destroy_all
-a1 = Article.create(
+Book.destroy_all
+@book = Book.create title: "北大附中学生手册", shortname: "student_handbook"
+a1 = @book.articles.create(
 		order: 0,
 		title: "高中学生行为指引",
 		content: '北大附中崇尚“自由、民主”，学校通过各种制度保证学生的“自主选择”权利。但是自由并不代表没有规矩或者不受限制。孟德斯鸠说“自由不是无限制的自由，自由是一种能做法律许可的任何事的权力。”《北大附中学生行为指引》及相关的制度规定正是为了保证学生的自由而制定的。
@@ -57,7 +59,7 @@ a1 = Article.create(
 		last_edit_at: Time.now
 	)
 
-a2 = Article.create(
+a2 = @book.articles.create(
 		order: 1,
 		title: "北大附中学生触犯“黄色警戒”和涉及“红色禁区”行为处理办法",
 		content: '###1 处分等级
@@ -122,7 +124,7 @@ a2 = Article.create(
 		last_edit_at: Time.now
 	)
 
-a3 = Article.create(
+a3 = @book.articles.create(
 		order: 2,
 		title: "校门出入制度",
 		content: '###1 处分等级
@@ -155,7 +157,7 @@ a3 = Article.create(
 		last_edit_at: Time.now
 	)
 
-a4 = Article.create(
+a4 = @book.articles.create(
 		order: 3,
 		title: "请假制度",
 		content:'<div class="ui purple segment">
@@ -180,7 +182,7 @@ a4 = Article.create(
 		last_edit_at: Time.now
 	)
 
-a5 = Article.create(
+a5 = @book.articles.create(
 		order: 4,
 		title: "学生宿舍住宿管理制度",
 		content: '- **第一条** 北大附中设立“住宿生管理办公室”（以下简称“住宿办”）负责学生住宿的申请、批准和退宿以及住宿生的日常管理工作。
@@ -195,7 +197,7 @@ a5 = Article.create(
 		last_edit_at: Time.now
 	)
 
-a6 = Article.create(
+a6 = @book.articles.create(
 		order: 5,
 		title: "图书馆管理制度",
 		content: '###阅览制度
@@ -228,7 +230,7 @@ a6 = Article.create(
 		last_edit_at: Time.now
 	)
 
-a7 = Article.create(
+a7 = @book.articles.create(
 		order: 6,
 		title: "北大附中部门结构图",
 		content: '![结构图](/images/contain/c2.jpg)',
@@ -236,7 +238,7 @@ a7 = Article.create(
 		last_edit_at: Time.now
 	)
 
-a8 = Article.create(
+a8 = @book.articles.create(
 		order: 7,
 		title: "北大附中申优流程",
 		content: '![申优流程](/images/contain/c3.jpg)',
@@ -244,7 +246,7 @@ a8 = Article.create(
 		last_edit_at: Time.now
 	)
 
-a9 = Article.create(
+a9 = @book.articles.create(
 		order: 8,
 		title: "北大附中校园网络管理规定",
 		content: %{为加强北京大学附属中学校园网络的管理，确保其正常、安全运行，制定本规定。规定所称的校园网络系统，是指由学校投资建设的，提供校园网络应用及服务的软、硬件集成系统，包括由学校相关部门负责维护和管理的校园网络主、辅节点设备，配套的网络线缆设施及网络服务器、工作站、网站、各管理信息系统等，以及学校各单位建设的校园网络、网站及应用系统等，如电子邮件、论坛、BBS、短信、FTP等。
@@ -285,7 +287,7 @@ a9 = Article.create(
 		last_edit_at: Time.now
 	)
 
-a10 = Article.create(
+a10 = @book.articles.create(
 		order: 9,
 		title: "关于校园内张贴宣传物品及通知的规定",
 		content: %{  为了安全及防止对墙体产生不可逆转的损坏，以下：
@@ -324,7 +326,7 @@ a10 = Article.create(
 		last_edit_at: Time.now
 	)
 
-a11 = Article.create(
+a11 = @book.articles.create(
 		order: 10,
 		title: "北大附中文凭与奖励",
 		content: '![文凭](/images/contain/c6.jpg)',
@@ -332,7 +334,7 @@ a11 = Article.create(
 		last_edit_at: Time.now
 	)
 
-a12 = Article.create(
+a12 = @book.articles.create(
 		order: 11,
 		title: "北大附中社团管理条例",
 		content: %{###社团结构
@@ -414,7 +416,7 @@ a12 = Article.create(
 		last_edit_at: Time.now
 	)
 
-a13 = Article.create(
+a13 = @book.articles.create(
 		order: 12,
 		title: "北大附中传统赛事",
 		content: '![传统赛事](/images/contain/c8.jpg)',
@@ -422,7 +424,7 @@ a13 = Article.create(
 		last_edit_at: Time.now
 	)
 
-a14 = Article.create(
+a14 = @book.articles.create(
 		order: 13,
 		title: "电子柜使用说明",
 		content: %{###原则
@@ -451,7 +453,7 @@ a14 = Article.create(
 		last_edit_at: Time.now
 	)
 
-a15 = Article.create(
+a15 = @book.articles.create(
 		order: 14,
 		title: "各部门联系人",
 		content:%{<table class="table table-hover">
@@ -732,14 +734,14 @@ a15 = Article.create(
 		last_edit_at: Time.now
 	)
 
-a16 = Article.create(
+a16 = @book.articles.create(
 		order: 15,
 		title: "校园公共场地快速导引",
 		content: %{![传统赛事](/images/contain/map.jpg)},
 		public_at: "2013-09-01 00:00:00 +08:00",
 		last_edit_at: Time.now
 	)
-a17 = Article.create(
+a17 = @book.articles.create(
 		order: 16,
 		title: "关于学校公共场地的管理规定",
 		content: %{1. 在使用公共场所前，需提前2个工作日（不少于48小时）通过邮箱sheshi@pkuschool.edu.cn进行申请。对于学生，只有注册社团及其负责人可以申请。对于教师，只有中层干部及以上可以申请。中心社团由部门负责人进行申请。部分学生活动并非以社团的形式开展，则需单独向实践与体验学习中心`shijian@pkuschool.edu.cn`申请，获得同意后，由实践中心知会设施办公室，由设施办公室执行。
@@ -754,7 +756,7 @@ a17 = Article.create(
 		public_at: "2013-09-01 00:00:00 +08:00",
 		last_edit_at: Time.now
 	)
-a18 = Article.create(
+a18 = @book.articles.create(
 		order: 17,
 		title: "专业教室管理",
 		content: %{专业教室实行教师负责制，教师应负责专业教室内的设备管理及门的开关。
@@ -769,7 +771,7 @@ a18 = Article.create(
 		public_at: "2013-09-01 00:00:00 +08:00",
 		last_edit_at: Time.now
 	)
-a19 = Article.create(
+a19 = @book.articles.create(
 		order: 18,
 		title: "书院活动室的管理及规定",
 		content: %{书院活动室原为单元活动室，为了提供给各位书院学生有自己的生活空间，以及文化传承的地方。
@@ -788,14 +790,14 @@ a19 = Article.create(
 		public_at: "2013-09-01 00:00:00 +08:00",
 		last_edit_at: Time.now
 	)
-a20 = Article.create(
+a20 = @book.articles.create(
 		order: 19,
 		title: "书院活动室装修流程及说明",
 		content: %{![书院活动室装修流程及说明](/images/contain/c19.jpg)},
 		public_at: "2013-09-01 00:00:00 +08:00",
 		last_edit_at: Time.now
 	)
-a21 = Article.create(
+a21 = @book.articles.create(
 		order: 20,
 		title: "各书院集会地点",
 		content:%{<table class="table table-hover">

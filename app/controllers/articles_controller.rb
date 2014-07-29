@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  before_action CASClient::Frameworks::Rails::Filter, :is_admin?
+  #before_action CASClient::Frameworks::Rails::Filter, :is_admin?
   before_action :only_admin
 
   # GET /articles

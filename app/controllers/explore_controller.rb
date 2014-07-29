@@ -1,6 +1,6 @@
 class ExploreController < ApplicationController
   def index
-    @raw_articles = Article.all
+    @raw_articles = Book.all.first.articles.all
     @articles = @raw_articles.sort_by {|a| a.order}
     time = Array.new
     for article in @articles
