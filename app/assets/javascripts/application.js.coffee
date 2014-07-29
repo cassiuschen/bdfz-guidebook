@@ -18,31 +18,31 @@
 #= require nprogress
 #= require nprogress-turbolinks
 #= require timeago
-# require_tree .
+#= require_tree .
 
 window.App =
 	Affix : () ->
 	    $window = $('window')
 	    $body = $('body')
 	    navHeight = $('.navbar').outerHeight(true) + 10
-	    
+
 	    $window.on "load", ->
 	        $body.scrollspy 'refresh'
-	        return	
+	        return
 
 	    $('body [href=#]').click (e) ->
-	        e.preventDefault()	
+	        e.preventDefault()
 
 	    setTimeout ->
-	        $sideBar = $('.onspy')	
+	        $sideBar = $('.onspy')
 
 	        $sideBar.affix(
-	            offset : 
+	            offset :
 	                top : () ->
 	                		offsetTop = $sideBar.offset().top
 	                		sideBarMargin  = parseInt $sideBar.children(0).css('margin-top'),10
 	                		navOuterHeight = $('nav.navbar').height()
-	                		return this.top = offsetTop - navOuterHeight - sideBarMargin	
+	                		return this.top = offsetTop - navOuterHeight - sideBarMargin
 
 	                	bottom : () ->
 	                		return this.bottom = $('footer').outerHeight true
