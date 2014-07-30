@@ -1,9 +1,39 @@
-p#notice = notice
-
-p
-  strong Title:
-  = @book.title
+#angular_data data-book-id="#{@book.id}"
+.col-md-10.col-md-offset-3 ng-app="bdfz-guidebook" ng-controller="ArticlesController"
+  .acd.page
+    .acd.main.content
+      .body
+        .acd.article-info-header style="margin-bottom: 0; border-bottom: #ddd solid 1px;"
+          .acd.title 文档列表{{book_id}}{{article_id}}
+          .acd.subtitle
+            | 选择你想要查看或编辑的文档，发布问题、回答问题。
+        ul.acd.list.page.data-no-turbolink 
+          li.acd.list.item ng-repeat="article in articles"
+            .number
+              | {{article.order}}
+            .content 
+              .title
+                a
+                  | {{article.title}}
+                - if Rails.env == 'development' || session[:admin] == true
+                  | &ensp;&ensp;
+                  /= link_to '(编辑', edit_article_path(article)
+                  a ng-click="show_update_modal($event)" data-article-id="{{article.id}}"
+                    | 编辑
+                  | &ensp;/&ensp;
+                  /= link_to '删除)', article, data: {:confirm => '你确定么？'}, :method => :delete
+              .sub-title
+                | {{article.content..substring(0,60)}}
+          li.acd.list.item
+            .number +
+            .content
+              .title 
+                /= link_to "新建文档", new_article_path
+                a 新建文档
+  = render 'books/article_modal'
 
 = link_to 'Edit', edit_book_path(@book)
 '|
 = link_to 'Back', books_path
+
+/= truncate(strip_tags(article.content), length: 60)

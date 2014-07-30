@@ -41,6 +41,13 @@ gem 'rack-mini-profiler'
 gem 'puma'
 gem 'devise'
 
+# Editor
+gem 'font-awesome-rails'
+gem 'simditor-rails'
+
+# Angular
+gem 'angularjs-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

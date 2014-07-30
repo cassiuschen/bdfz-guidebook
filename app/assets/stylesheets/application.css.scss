@@ -12,8 +12,9 @@
  *
  * require_tree .
  *= require_self
+ *= require font-awesome
+ *= require simditor
  */
-
 @import 'variables';
 //Bootstrap Theme
 $font-family-sans-serif: arial,sans-serif;
@@ -81,3 +82,4 @@ input.acd.btn {
   left: 50%;
   margin-left: -300px;
 }
+@import 'font-awesome';

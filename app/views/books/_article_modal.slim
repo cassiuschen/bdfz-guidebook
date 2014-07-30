@@ -1,0 +1,24 @@
+.modal.fade#article_modal data-backdrop="false"
+  .modal-dialog style="width: 80%;"
+    .modal-content
+      .modal-header
+        button.close type="button" data-dismiss="modal" ng-click="clear_editor()"
+          span aria-hidden="true" &times;
+        h4.modal-title
+          | {{modal_action}}文档{{article_id}}
+      form.modal-body.form
+        .form-group
+          label 文档序号
+          input#order.form-control value="{{article.order}}" type="number" style="color: black;width: 10%;"
+        .form-group
+          label 文档标题
+          input#title.form-control value="{{article.title}}" style="color: black;width: 90%;"
+        .form-group
+          label 文档内容
+          textarea.simditor data-value="{{article.content}}"
+      .modal-footer
+        button.acd.btn.base.white data-dismiss="modal" ng-click="clear_editor()"
+          | 放弃{{modal_action}}
+        button.acd.btn.base.green ng-click="update_article()"
+          | 保存{{modal_action}}
+

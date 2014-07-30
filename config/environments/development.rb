@@ -31,7 +31,6 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
-  config.assets.precompile += %w( articles.js comments.js questions.js home.js home.css)
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

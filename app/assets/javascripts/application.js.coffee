@@ -18,7 +18,19 @@
 #= require nprogress
 #= require nprogress-turbolinks
 #= require timeago
+#= require simditor
+#= require angular
+#= require angular-animate
+#= require angular-resource
+#= require angular-touch
+#= require angular-sanitize
+#= require angular-cookies
+#= require angular-route
 #= require_tree .
+#= require_tree ./angular
+# require_tree ./angular/services
+#= require_tree ./angular/controllers
+# require_tree ../templates
 
 window.App =
 	Affix : () ->
@@ -51,6 +63,13 @@ window.App =
 	    ,100
 	    return
 
+	Simditor : (value) ->
+		editor = new Simditor
+    		textarea: $('.simditor')
+    		upload: true
+    		toolbar: ['bold', 'italic', 'underline', '|', 'ol', 'ul', 'blockquote', 'code', '|', 'link', 'image', '|', 'indent', 'outdent', '|', 'hr', 'table']
+    	editor.setValue = value
+ 
 	Init : () ->
 		App.Affix()
 		$originWidth = $('#affix-bar').width()

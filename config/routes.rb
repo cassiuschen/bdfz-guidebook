@@ -12,6 +12,16 @@ Rails.application.routes.draw do
   get "home/index"
   root 'home#index'
 
+  namespace :api do
+    namespace :v1 do
+      get 'article/get_info'
+      get 'article/get_last_order'
+      post 'article/update'
+      post 'article/new'
+      get 'article/get_list'
+    end
+  end
+
   #get "articles/explore"
 
   # You can have the root of your site routed with "root"
