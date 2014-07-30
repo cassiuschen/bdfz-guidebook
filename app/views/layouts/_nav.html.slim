@@ -11,9 +11,9 @@ nav.navbar.navbar-default.navbar-fixed-top.acd.hidden-print role="navigation"
       li = link_to '首页', root_path
       li class=('active' if controller_name == "explore")
         = link_to '浏览全文', explore_path
-      - if session[:admin] == true
-        li class=('active' if controller_name == "articles")
-          = link_to '详细阅览', articles_path
+      - for book in Book.all
+        li
+          a = book.title
 
     ul.nav.navbar-nav.navbar-right
         - if current_user

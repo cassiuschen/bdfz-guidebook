@@ -15,6 +15,16 @@ window.angular_app.controller 'ArticlesController', [
 			.success (data, status, headers) ->
 				$scope.articles = data
 
+		$scope.update_list = () ->
+			$scope.articles = []
+			$http.get("/api/v1/article/get_list.json?id=#{$scope.book_id}", {},
+					method: "GET",
+					params:
+						id: $('#angular_data').data('book-id')
+					,isArray: true)
+				.success (data, status, headers) ->
+					$scope.articles = data
+
 		$scope.get_info = () ->
 			$http.get "/api/v1/article/get_info.json?id=#{$scope.article_id}",{},
 					method: "GET",
@@ -51,8 +61,6 @@ window.angular_app.controller 'ArticlesController', [
 							content: window.editor.getValue()
 					,isArray: false
 				.success () ->
+					$scope.update_list()
 					$('#article_modal').modal('hide')
-			
-			
-
 ]

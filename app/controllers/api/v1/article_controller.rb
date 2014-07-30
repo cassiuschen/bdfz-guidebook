@@ -11,7 +11,7 @@ class Api::V1::ArticleController < Api::V1::BaseController
 
   def get_list
     book = Book.where("id = ?", info_params).last
-    render json: book.articles
+    render json: book.articles.all.sort_by{|a| a.order}
   end
 
   def get_last_order

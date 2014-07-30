@@ -83,3 +83,21 @@ input.acd.btn {
   margin-left: -300px;
 }
 @import 'font-awesome';
+
+body.book.index {
+  .acd.main.content {
+    .body {
+      .title {
+        .content {
+          margin: 0 !important;
+          text-align: center !important;
+        }
+      }
+    }
+  }
+}
+
+#path_1 {
+  margin: 0 !important;
+  text-align: center;
+}

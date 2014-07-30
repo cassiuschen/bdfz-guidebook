@@ -7,10 +7,10 @@
 
 ## 生产环境
 - Linux
-- Ruby 2.1.0p1
-- Rails 4.1.0-beta1
-- Postgresql 9.1
-- Puma 2.7.1
+- Ruby 2.1.2
+- Rails 4.1.4
+- Postgresql 9.1/9.3
+- Puma 2.9.0
 - Nginx
 
 ## 开发部署：

@@ -6,41 +6,30 @@
           .acd.main.content
             .body
               .title
-                .content
+                .content#path_1
                   header.acd
                     h3.title
                       = link_to book.title, book
                     span.sub.title
                       span.timeago
                         | #{better_time(book.last_updated_at)}修订
+              - if current_user
+                .acd.article
+                  .description
+                    .text
+                      .content
+                        = link_to '文章列表', book, :class => 'acd btn blue small'
+                        = link_to '修改', edit_book_path(book), :class => 'acd btn green small'
+                        = link_to '删除', book, data: {:confirm => 'Are you sure?'}, :method => :delete, :class => 'acd btn red small'
+
+
     - if current_user
       .col-md-4
         .acd.page
           .acd.main.content
             .body
               .title
-                .content
+                .content#path_1
                   header.acd
                     h3.title
                       = link_to "新建手册", new_book_path
-                  
-
-table
-  thead
-    tr
-      th Title
-      th
-      th
-      th
-
-  tbody
-    - @books.each do |book|
-      tr
-        td = book.title
-        td = link_to 'Show', book
-        td = link_to 'Edit', edit_book_path(book)
-        td = link_to 'Destroy', book, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
-
-= link_to 'New Book', new_book_path
