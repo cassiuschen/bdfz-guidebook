@@ -15,7 +15,7 @@
               .title
                 a
                   | {{article.title}}
-                - if Rails.env == 'development' || session[:admin] == true
+                - if Rails.env == 'development' || current_user
                   | &ensp;&ensp;
                   /= link_to '(编辑', edit_article_path(article)
                   a ng-click="show_update_modal($event)" data-article-id="{{article.id}}"
