@@ -84,9 +84,10 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy
+    @book = Book.find(params[:book_id])
     @article.destroy
     respond_to do |format|
-      format.html { redirect_to articles_url }
+      format.html { redirect_to @book, notice: 'Book was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

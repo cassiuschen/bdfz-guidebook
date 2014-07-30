@@ -4,7 +4,7 @@
     .acd.main.content
       .body
         .acd.article-info-header style="margin-bottom: 0; border-bottom: #ddd solid 1px;"
-          .acd.title 文档列表{{book_id}}
+          .acd.title = @book.title
           .acd.subtitle
             | 选择你想要查看或编辑的文档，发布问题、回答问题。
         ul.acd.list.page.data-no-turbolink 
@@ -22,18 +22,15 @@
                     | 编辑
                   | &ensp;/&ensp;
                   /= link_to '删除)', article, data: {:confirm => '你确定么？'}, :method => :delete
+                  a method="delete" href="/books/{{book_id}}/articles/{{article.id}}" data-confirm="Are you sure?" data-method="delete" rel="nofollow" 删除 
               .sub-title
                 | {{article.content..substring(0,60)}}
-          li.acd.list.item
-            .number +
-            .content
-              .title 
-                /= link_to "新建文档", new_article_path
-                a ng-click="show_create_modal()" 新建文档
-  = render 'books/article_modal'
-
-= link_to 'Edit', edit_book_path(@book)
-'|
-= link_to 'Back', books_path
-
-/= truncate(strip_tags(article.content), length: 60)
+          - if current_user
+            li.acd.list.item
+              .number +
+              .content
+                .title 
+                  /= link_to "新建文档", new_article_path
+                  a ng-click="show_create_modal()" 新建文档
+  - if current_user
+    = render 'books/article_modal'

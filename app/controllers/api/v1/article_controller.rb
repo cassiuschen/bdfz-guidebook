@@ -16,7 +16,7 @@ class Api::V1::ArticleController < Api::V1::BaseController
 
   def get_last_order
     book = Book.where("id = ?", info_params).last
-    render json: book.articles.all.map {|a| a.order}.max + 1 || 1
+    render json: book.articles.all.map {|a| a.order}.max || 1
   end
 
   def update

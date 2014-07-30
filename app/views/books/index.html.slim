@@ -1,7 +1,7 @@
-.container
-  .row
-    - for book in @books
-      .col-md-4
+- if current_user
+  .container ng-app="bdfz-guidebook" ng-controller="BooksController"
+    .row
+      .col-md-4 ng-repeat="book in books"
         .acd.page
           .acd.main.content
             .body
@@ -9,21 +9,18 @@
                 .content#path_1
                   header.acd
                     h3.title
-                      = link_to book.title, book
+                      | {{book.title}}
                     span.sub.title
                       span.timeago
-                        | #{better_time(book.last_updated_at)}修订
-              - if current_user
-                .acd.article
-                  .description
-                    .text
-                      .content
-                        = link_to '文章列表', book, :class => 'acd btn blue small'
-                        = link_to '修改', edit_book_path(book), :class => 'acd btn green small'
-                        = link_to '删除', book, data: {:confirm => 'Are you sure?'}, :method => :delete, :class => 'acd btn red small'
+                        | {{book.version}}修订
+              .acd.article
+                .description
+                  .text
+                    .content
+                      a.acd.btn.blue.small href="/books/{{book.id}}" 文章列表
+                      a.acd.small.green.btn data-book-id="{{book.id}}" ng-click="show_update_modal($event)" 修改
+                      a.acd.small.red.btn method="delete" href="/books/{{book.id}}" data-confirm="Are you sure?" data-method="delete" rel="nofollow" 删除 
 
-
-    - if current_user
       .col-md-4
         .acd.page
           .acd.main.content
@@ -32,4 +29,21 @@
                 .content#path_1
                   header.acd
                     h3.title
-                      = link_to "新建手册", new_book_path
+                      a ng-click="show_create_modal()" 新建手册
+    = render 'books/book_modal'
+- else
+  .container
+    .row
+      - for book in @books
+        .col-md-4
+          .acd.page
+            .acd.main.content
+              .body
+                .title
+                  .content#path_1
+                    header.acd
+                      h3.title
+                        = link_to book.title, book
+                      span.sub.title
+                        span.timeago
+                          | #{better_time(book.last_updated_at)}修订

@@ -36,7 +36,7 @@ gem 'markdown'
 gem 'redcarpet'
 
 # Speedy
-gem 'rack-mini-profiler'
+#gem 'rack-mini-profiler'
 
 gem 'puma'
 gem 'devise'

@@ -1,0 +1,20 @@
+.modal.fade#book_modal data-backdrop="false"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close type="button" data-dismiss="modal" ng-click="clear_editor()"
+          span aria-hidden="true" &times;
+        h4.modal-title
+          | {{modal_action}}手册
+      form.modal-body.form
+        .form-group
+          label 手册名称
+          input#title.form-control value="{{book.title}}" style="color: black;width: 90%;"
+      .modal-footer
+        button.acd.btn.base.white data-dismiss="modal" ng-click="clear_editor()"
+          | 放弃{{modal_action}}
+        button.acd.btn.base.green ng-show="is_update" ng-click="update_book()"
+          | 保存{{modal_action}}
+        button.acd.btn.base.green ng-hide="is_update" ng-click="create_book()"
+          | 保存{{modal_action}}
+

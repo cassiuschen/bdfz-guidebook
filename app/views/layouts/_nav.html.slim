@@ -9,11 +9,12 @@ nav.navbar.navbar-default.navbar-fixed-top.acd.hidden-print role="navigation"
   .acd.collapse.navbar-collapse#mobile-menu
     ul.nav.navbar-nav.main
       li = link_to '首页', root_path
-      li class=('active' if controller_name == "explore")
-        = link_to '浏览全文', explore_path
+      li class=('active' if controller_name == "books" && action_name == 'index')
+        = link_to '手册列表', books_path
       - for book in Book.all
-        li
-          a = book.title
+        li class=('active' if request.path == "/books/#{book.id}")
+          a href="/books/#{book.id}"
+            = book.title
 
     ul.nav.navbar-nav.navbar-right
         - if current_user

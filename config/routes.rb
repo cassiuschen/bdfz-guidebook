@@ -20,6 +20,10 @@ Rails.application.routes.draw do
       post 'article/update'
       post 'article/new'
       get 'article/get_list'
+      get 'book/get_list'
+      post 'book/update'
+      post 'book/new'
+      get 'book/info'
     end
   end
 
