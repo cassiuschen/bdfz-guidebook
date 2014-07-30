@@ -16,7 +16,7 @@ class Api::V1::ArticleController < Api::V1::BaseController
 
   def get_last_order
     book = Book.where("id = ?", info_params).last
-    return book.articles.all.map {|a| a.order}.max || 0
+    render json: book.articles.all.map {|a| a.order}.max + 1 || 1
   end
 
   def update
@@ -31,12 +31,7 @@ class Api::V1::ArticleController < Api::V1::BaseController
 
   def new
     book = Book.where("id = ?", info_params).last
-    a = book.articles.new(
-        order: new_params.order.to_i,
-        title: new_params.title,
-        content: new_params.content,
-        public_at: Time.now
-      )
+    a = book.articles.new(new_params)
     if a.save
       json = {
         status: "success",
@@ -58,6 +53,6 @@ class Api::V1::ArticleController < Api::V1::BaseController
   end
 
   def new_params
-    params[:article]
+    params.require(:article).permit(:title, :order, :content)
   end
 end

@@ -19,6 +19,8 @@
       .modal-footer
         button.acd.btn.base.white data-dismiss="modal" ng-click="clear_editor()"
           | 放弃{{modal_action}}
-        button.acd.btn.base.green ng-click="update_article()"
+        button.acd.btn.base.green ng-show="is_update" ng-click="update_article()"
+          | 保存{{modal_action}}
+        button.acd.btn.base.green ng-hide="is_update" ng-click="create_article()"
           | 保存{{modal_action}}
 

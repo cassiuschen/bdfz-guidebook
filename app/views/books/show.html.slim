@@ -29,7 +29,7 @@
             .content
               .title 
                 /= link_to "新建文档", new_article_path
-                a 新建文档
+                a ng-click="show_create_modal()" 新建文档
   = render 'books/article_modal'
 
 = link_to 'Edit', edit_book_path(@book)
