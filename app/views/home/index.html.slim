@@ -11,7 +11,7 @@ div id="bg-img-#{@rand_image}"
         | 浏览手册内容
 
 .acd.login-btn
-  - if session[:cas_user]
-   / = link_to "#{session[:cas_user]}登出", logout_path, :class => "acd small btn"
+  - if current_user
+   = link_to '退出登陆', destroy_user_session_path, :class => "acd small btn", method: 'delete'
   - else
-    = link_to "登陆", explore_path, :class => "acd small btn"
+    = link_to '管理员登陆', new_user_session_path, :class => "acd small btn"

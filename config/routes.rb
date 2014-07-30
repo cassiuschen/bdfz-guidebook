@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users, :skip => :registrations
   resources :books do
     resources :articles do
       resources :questions do

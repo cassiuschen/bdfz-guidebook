@@ -4,11 +4,8 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @book = Book.all.last
-    @articles = @book.articles.all.sort_by {|a| a.order } if @book
-    #@last_edit_at = @articles.all.map {|a| a.updated_at}.max
     @books = Book.all
-    @title = "内容"
+    @title = "手册内容"
   end
 
   def explore

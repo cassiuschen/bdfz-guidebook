@@ -1,62 +1,28 @@
 .container
   .row
-    .col-md-4
-      .acd.page
-        .acd.main.content
-          .body
-            .title
-              .content
-                header.acd
-                  h3.title
-                    = link_to @book.title, @book
-                  span.sub.title
-                    span.timeago
-                      | #{better_time(@book.last_updated_at)}修订
-    .col-md-4
-      .acd.page
-        .acd.main.content
-          .body
-            .title
-              .content
-                header.acd
-                  h3.title
-                    a = @book.title
-                  span.sub.title
-                    span.timeago
-                      | #{better_time(@book.last_updated_at)}修订
-    .col-md-4
-      .acd.page
-        .acd.main.content
-          .body
-            .title
-              .content
-                header.acd
-                  h3.title
-                    a = @book.title
-                  span.sub.title
-                    span.timeago
-                      | #{better_time(@book.last_updated_at)}修订
-    .col-md-4
-      .acd.page
-        .acd.main.content
-          .body
-            .title
-              .content
-                header.acd
-                  h3.title
-                    a = @book.title
-                  span.sub.title
-                    span.timeago
-                      | #{better_time(@book.last_updated_at)}修订
-    .col-md-4
-      .acd.page
-        .acd.main.content
-          .body
-            .title
-              .content
-                header.acd
-                  h3.title
-                    = link_to "新建手册", new_book_path
+    - for book in @books
+      .col-md-4
+        .acd.page
+          .acd.main.content
+            .body
+              .title
+                .content
+                  header.acd
+                    h3.title
+                      = link_to book.title, book
+                    span.sub.title
+                      span.timeago
+                        | #{better_time(book.last_updated_at)}修订
+    - if current_user
+      .col-md-4
+        .acd.page
+          .acd.main.content
+            .body
+              .title
+                .content
+                  header.acd
+                    h3.title
+                      = link_to "新建手册", new_book_path
                   
 
 table

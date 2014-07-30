@@ -16,11 +16,10 @@ nav.navbar.navbar-default.navbar-fixed-top.acd.hidden-print role="navigation"
           = link_to '详细阅览', articles_path
 
     ul.nav.navbar-nav.navbar-right
-        - if session[:cas_user]
+        - if current_user
           li
             a
-              | 欢迎您,
-              = session[:cas_user]
-          /li = link_to '登出', logout_path
+              | 管理员
+          li = link_to '退出', destroy_user_session_path, method: 'delete'
         - else
-          li = link_to "管理员登陆", books_path
+          li = link_to "管理员登陆", new_user_session_path
