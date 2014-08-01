@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       post 'book/update'
       post 'book/new'
       get 'book/info'
+      post 'upload/image'
     end
   end
 

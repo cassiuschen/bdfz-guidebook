@@ -59,8 +59,14 @@ window.angular_app.controller 'ArticlesController', [
 		$scope.set_modal_value = () ->
 			window.editor = new Simditor
 				textarea: $('.simditor')
-				upload: true
-				toolbar: ['bold', 'italic', 'underline', '|', 'ol', 'ul', 'blockquote', 'code', '|', 'link', 'image', '|', 'indent', 'outdent', '|', 'hr', 'table']
+				,upload:
+					url: '/api/v1/upload/image'
+					,params:
+						secret: "<%= Rails.application.secrets.upload %>"
+					,connectionCount: 1
+    				,leaveConfirm: '正在上传文件，如果离开上传会自动取消'
+				,pasteImage: true
+				,toolbar: ['bold', 'italic', 'underline', '|', 'ol', 'ul', 'blockquote', 'code', '|', 'link', 'image', '|', 'indent', 'outdent', '|', 'hr', 'table']
 			$scope.editor_init = true
 			window.editor.setValue($scope.article.content)
 		$scope.clear_editor = () ->

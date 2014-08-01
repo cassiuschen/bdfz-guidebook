@@ -1,18 +1,19 @@
-h2
-  | Sign in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  div
-    = f.label :email
-    br
-    = f.email_field :email, autofocus: true
-  div
-    = f.label :password
-    br
-    = f.password_field :password, autocomplete: "off"
-  - if devise_mapping.rememberable?
-    div
-      = f.check_box :remember_me
-      = f.label :remember_me
-  div
-    = f.submit "Sign in"
-= render "devise/shared/links"
+.col-md-10.col-md-offset-3
+  .acd.page
+    .acd.main.content
+      .body
+        .acd.article-info-header
+          .acd.title 管理员登陆
+          .acd.subtitle
+            | 只有管理员才可以登录哟~
+        .acd.article
+          = form_for(resource, as: resource_name, url: session_path(resource_name), html: { style: 'margin-left: 30px;margin-right: 30px;margin-bottom: 60px;'}) do |f|
+            .form-group
+              = f.label :email
+              = f.email_field :email, autofocus: true, :class => 'form-control', style: 'width: 90%;'
+            .form-group
+              = f.label :password
+              br
+              = f.password_field :password, autocomplete: "off" , :class => 'form-control', style: 'width: 90%;'
+            .form-group
+              = f.submit "登陆", :class => 'acd btn blue'

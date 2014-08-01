@@ -48,6 +48,10 @@ gem 'simditor-rails'
 # Angular
 gem 'angularjs-rails'
 
+# Upload
+gem 'mini_magick', '~> 3.7.0'
+gem 'carrierwave', '~> 0.9.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
