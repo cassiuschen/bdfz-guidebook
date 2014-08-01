@@ -12,9 +12,15 @@ nav.navbar.navbar-default.navbar-fixed-top.acd.hidden-print role="navigation"
       li class=('active' if controller_name == "books" && action_name == 'index')
         = link_to '手册列表', books_path
       - for book in Book.all
-        li class=('active' if request.path == "/books/#{book.id}")
-          a href="/books/#{book.id}"
-            = book.title
+        - if current_user
+          li class=('active' if request.path == "/books/#{book.id}")
+            a href="/books/#{book.id}"
+              = book.title
+        - else
+          li class=('active' if request.path == "/explore/#{book.id}")
+            a href="/explore/#{book.id}"
+              = book.title
+
 
     ul.nav.navbar-nav.navbar-right
         - if current_user

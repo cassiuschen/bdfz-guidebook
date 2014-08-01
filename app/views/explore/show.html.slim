@@ -42,7 +42,9 @@
           .acd.main.content
             .header
               .labels
-                a.text 北大附中学生手册
+                a.text
+                = @book.title
+                |  - 
                 = article.title
             .body
               .title
