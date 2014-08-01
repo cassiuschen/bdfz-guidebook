@@ -1,0 +1,58 @@
+window.mobile_app = angular.module('bdfz-guidebook', [
+  'ionic',
+  'mobile.controllers'
+])
+window.mobile_app.config(["$httpProvider", (provider) ->
+    provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
+    provider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
+])
+
+window.mobile_app
+  .run ['$ionicPlatform', ($ionicPlatform) ->
+    $ionicPlatform.ready () ->
+      StatusBar.styleDefault()
+  ]
+  .config ['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) ->
+    $stateProvider
+      .state 'mobile',
+        url: '/mobile',
+        abstract: true,
+        templateUrl: "<%= asset_path 'sidebar.html' %>"
+
+      .state 'mobile.home',
+        url: '/home',
+        views:
+          'menuContent' :
+            templateUrl: "<%= asset_path 'home.html' %>",
+            controller: 'HomeController'
+
+      .state 'mobile.books',
+        url: '/books',
+        views:
+          'menuContent' :
+            templateUrl: "<%= asset_path 'books.html' %>",
+            controller: 'BooksController'
+
+      .state 'mobile.show_book',
+        url: '/books/:BookId',
+        views:
+          'menuContent':
+            templateUrl: "<%= asset_path 'show_book.html' %>",
+            controller: 'BookDetailController'
+            
+      .state 'mobile.show_book.article',
+        url: '/:ArticleId'
+        views:
+          'menuContent':
+            templateUrl: "<%= asset_path 'show_article.html' %>",
+            controller: 'ArticleController'
+
+      .state 'mobile.about',
+        url: '/adout',
+        views:
+          "menuContent" :
+            templateUrl: "<%= asset_path 'about.html' %>",
+            controller: "AboutController"
+    
+    $urlRouterProvider.otherwise "/mobile/home"
+  ]

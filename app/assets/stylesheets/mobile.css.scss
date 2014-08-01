@@ -1,0 +1,21 @@
+//= require ionic
+//= require_self
+
+#welcome {
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -5;
+	background-position: center 0;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	zoom: 1;
+	background-image: asset-url("s-01.jpg");
+}

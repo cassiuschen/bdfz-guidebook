@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  before_action :use_mobile_view
   helper_method :better_time
   $markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => false)
 
@@ -24,6 +25,10 @@ class ApplicationController < ActionController::Base
     "#{year}年#{month}月#{day}日"
   end
 
+  private
+  def use_mobile_view
+    request.variant = :phone if request.user_agent =~ /iPhone/
+  end
   #def logout
   #	reset_session
   #  CASClient::Frameworks::Rails::Filter.logout(self)

@@ -1,0 +1,23 @@
+#= require jquery
+#= require angular
+#= require angular-animate
+#= require angular-resource
+#= require angular-touch
+#= require angular-sanitize
+#= require angular-cookies
+#= require ionic/ionic
+#= require ionic/angular-ui/angular-ui-router
+#= require ionic/ionic-angular
+#= require timeago
+#= require_self
+#= require ./angular/mobile_app
+#= require ./angular/controllers/mobile_controller
+#= require_tree ../templates
+window.base =
+	timeago : () ->
+		$(".timeago").timeago()
+	Init : () ->
+		window.base.timeago()
+
+$ ->
+	window.base.Init()

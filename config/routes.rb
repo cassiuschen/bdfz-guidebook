@@ -26,6 +26,9 @@ Rails.application.routes.draw do
       post 'book/new'
       get 'book/info'
       post 'upload/image'
+      # Mobile
+      get 'mobile/last_update'
+      
     end
   end
 

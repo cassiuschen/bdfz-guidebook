@@ -1,0 +1,12 @@
+doctype html
+html ng-app="bdfz-guidebook"
+  head
+    meta content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" name="viewport"
+    title= content_for?(:title) ? yield(:title) : "北大附中学生手册"
+    meta content=(content_for?(:description) ? yield(:description) : "北大附中学生手册") name="description"
+    = stylesheet_link_tag "mobile", :media => "all", "data-turbolinks-track" => true
+    = javascript_include_tag "mobile", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  body class=("#{controller_name} #{action_name}") data-controller-name="#{controller_name}" animation="slide-left-right-ios7"
+    div ng-controller="SideMenuController"
+      ion-nav-view
