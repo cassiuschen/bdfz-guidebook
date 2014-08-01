@@ -62,7 +62,7 @@ window.angular_app.controller 'ArticlesController', [
 				,upload:
 					url: '/api/v1/upload/image'
 					,params:
-						secret: "<%= Rails.application.secrets.upload %>"
+						secret: window.App.UploadSecret()
 					,connectionCount: 1
     				,leaveConfirm: '正在上传文件，如果离开上传会自动取消'
 				,pasteImage: true

@@ -33,6 +33,8 @@
 # require_tree ../templates
 
 window.App =
+	UploadSecret : () ->
+		"<%= Rails.application.secrets.upload %>"
 	Affix : () ->
 	    $window = $('window')
 	    $body = $('body')
