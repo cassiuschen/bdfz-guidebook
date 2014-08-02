@@ -1,5 +1,6 @@
 ion-view title="{{book.title}}"
-  ion-content padding="true"
+  ion-content
+    ion-refresher pulling-text="向下拉动以更新数据..." on-refresh="doRefresh()"
     ion-list
-      ion-item ng-repeat="article in articles"
+      ion-item ng-repeat="article in articles" href="#/mobile/books/{{article.book_id}}/{{article.id}}"
         | {{article.title}}

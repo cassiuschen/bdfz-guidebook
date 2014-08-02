@@ -1,0 +1,16 @@
+ion-view title="{{article.title}}"
+  ion-content
+    .list.card
+      style
+        | img {width: 100% !important;}
+      .item
+        h2
+          | {{book.title}} - {{article.title}}
+        p
+          | {{article.updated_at}}最后修订
+      .item.item-body ng-bind-html="article.content"
+      javascript:
+        $(document).ready(function(){
+          $('img').addClass("full-image");
+        });
+        $('img').addClass("full-image");

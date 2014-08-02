@@ -15,7 +15,7 @@ window.MobileController
       
   ]
 
-  .controller 'BookDetailController', ['$scope', '$stateParams', '$http', ($scope, $stateParams, $http) ->
+  .controller 'BookDetailController', ['$scope', '$stateParams', '$http', '$rootScope', ($scope, $stateParams, $http, $rootScope) ->
     $scope.get_list = () ->
       $http
           url: '/api/v1/article/get_list.json',
@@ -24,7 +24,16 @@ window.MobileController
           ,isArray: true
         .success (data) ->
           $scope.articles = data
+    $scope.get_book = () ->
+      $http
+          url: '/api/v1/book/info.json',
+          params:
+            id: $stateParams.BookId
+          ,isArray: false
+        .success (data) ->
+          $rootScope.book = data
     $scope.get_list()
+    $scope.get_book()
     $scope.refresh = () ->
       $scope.get_list()
     ]
@@ -41,7 +50,27 @@ window.MobileController
         $scope.version = data.version
   ]
 
-  .controller 'ArticleController', ['$scope', '$http', ($scope, $http) -> 
+  .controller 'ArticleController', ['$scope', '$http', '$stateParams', '$ionicPlatform', ($scope, $http, $stateParams, $ionicPlatform) ->
+    $scope.get_article = () ->
+      $http
+          url: '/api/v1/article/get_info.json',
+          params:
+            id: $stateParams.ArticleId
+          ,isArray: false
+        .success (data) ->
+          $scope.article = data
+    $scope.get_book = () ->
+      $http
+          url: '/api/v1/book/info.json',
+          params:
+            id: $stateParams.Book_Id
+          ,isArray: false
+        .success (data) ->
+          $scope.book = data
+    $scope.get_book()
+    $scope.get_article()
+    $ionicPlatform.ready () ->
+      $('img').addClass("full-image");
   ]
 
   .controller 'SideMenuController', [

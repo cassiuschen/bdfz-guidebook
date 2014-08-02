@@ -4,7 +4,8 @@ class Api::V1::ArticleController < Api::V1::BaseController
     json = {
       title: article.title,
       order: article.order,
-      content: article.content
+      content: article.content,
+      updated_at: better_time(article.updated_at)
     }
     render json: json
   end
@@ -27,6 +28,16 @@ class Api::V1::ArticleController < Api::V1::BaseController
     else
       render json: {status: 'error'}
     end
+  end
+
+  def better_time(time)
+    t = time.to_s
+    p = /(....)-(..)-(..)/ 
+    p.match(t)
+    year = $1.to_i
+    month = $2.to_i
+    day = $3.to_i
+    "#{year}年#{month}月#{day}日"
   end
 
   def new

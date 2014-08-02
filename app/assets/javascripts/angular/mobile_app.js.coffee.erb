@@ -1,6 +1,7 @@
 window.mobile_app = angular.module('bdfz-guidebook', [
   'ionic',
-  'mobile.controllers'
+  'mobile.controllers',
+  'ngSanitize'
 ])
 window.mobile_app.config(["$httpProvider", (provider) ->
     provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
@@ -39,16 +40,16 @@ window.mobile_app
           'menuContent':
             templateUrl: "<%= asset_path 'show_book.html' %>",
             controller: 'BookDetailController'
-            
-      .state 'mobile.show_book.article',
-        url: '/:ArticleId'
+
+      .state 'mobile.article',
+        url: '/books/:Book_Id/:ArticleId'
         views:
           'menuContent':
             templateUrl: "<%= asset_path 'show_article.html' %>",
             controller: 'ArticleController'
 
       .state 'mobile.about',
-        url: '/adout',
+        url: '/about',
         views:
           "menuContent" :
             templateUrl: "<%= asset_path 'about.html' %>",
