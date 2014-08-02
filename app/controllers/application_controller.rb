@@ -28,6 +28,7 @@ class ApplicationController < ActionController::Base
   private
   def use_mobile_view
     request.variant = :phone if request.user_agent =~ /iPhone/
+    request.variant = :phone if request.user_agent =~ /Android/
   end
   #def logout
   #	reset_session
